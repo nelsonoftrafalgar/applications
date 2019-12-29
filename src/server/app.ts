@@ -16,18 +16,18 @@ export const pool = new Pool({
   port: Number(process.env.BD_PORT)
 })
 
-const port = 3000
+const port = 4000
 const app = express()
 
 app.use(cors())
 app.use(bodyParser.json())
-app.use(express.static('public'))
+app.use(express.static('dist'))
 
-app.use('/statistics', statistics)
+app.use('/api/statistics', statistics)
 
-app.use('/search', search)
+app.use('/api/search', search)
 
-app.use('/add', add)
+app.use('/api/add', add)
 
 // tslint:disable-next-line: no-console
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
