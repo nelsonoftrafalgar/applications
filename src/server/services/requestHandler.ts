@@ -31,8 +31,9 @@ class RequestHandler {
     return async (req: Request, res: Response) => {
       try {
         await pool.query(queryBuilder.add(req.body))
-        res.sendStatus(200)
+        res.status(200).json('Added successfully')
       } catch (error) {
+        res.status(500).json('Ooopsss!')
         throw error
       }
     }

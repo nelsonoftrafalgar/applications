@@ -2,7 +2,7 @@ import { Container, Dot, Section, StyledLink } from './NavItem'
 import React, { useContext } from 'react'
 
 import { INavSubItemProps } from '../models/nav'
-import { NavContext } from '../context/navContext'
+import { NavContext } from '../context/context'
 
 const NavSubItem: React.FC<INavSubItemProps> = ({name, parent, path}) => {
   const {activeNavState, handleSetActiveItem} = useContext(NavContext)

@@ -2,7 +2,7 @@ import { IActiveNavItem, INavItemProps, INavItemSubGroup } from '../models/nav'
 import React, { useContext } from 'react'
 
 import { Link } from 'react-router-dom'
-import { NavContext } from '../context/navContext'
+import { NavContext } from '../context/context'
 import NavSubItem from './NavSubItem'
 import { globalStyles } from '../styles/styles'
 import styled from 'styled-components'

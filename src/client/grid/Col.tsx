@@ -13,7 +13,6 @@ interface ICol {
 
 const Style = styled('div')<IColStyle>`
   ${({size}) => `width: calc(${size} / 12 * 100%);`}
-  background: red;
 `
 
 const Col: React.FC<ICol> = ({

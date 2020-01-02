@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { initialState, navigation } from '../data/navigation'
 
 import { Link } from 'react-router-dom'
-import { NavContext } from '../context/navContext'
+import { NavContext } from '../context/context'
 import NavItem from '../components/NavItem'
 import { globalStyles } from '../styles/styles'
 import styled from 'styled-components'

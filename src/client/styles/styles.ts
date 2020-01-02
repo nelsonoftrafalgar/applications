@@ -6,5 +6,7 @@ export const globalStyles = {
   nav_icon_color: '#3f4f85',
   nav_dot_color: '#defec1',
   basic_font_family: 'Arial, Helvetica, sans-serif',
-  border_radius: '5px'
+  border_radius: '5px',
+  form_error_color: '#e83544',
+  form_success_color: '#34eb7d'
 }
