@@ -1,11 +1,12 @@
 import React, { MutableRefObject, useRef } from 'react'
 
-import {BarChartComponent} from '../Charts/'
-import { IQuantityWidgetProps } from '../../models/statistics'
+import { IDateWidgetProps } from '../../models/statistics'
+import {LineChartComponent} from '../Charts/'
+import { colors } from '../../data/statistics'
 import { globalStyles } from '../../styles/styles'
 import styled from 'styled-components'
 
-const {light_bg, basic_font_color, basic_font_family} = globalStyles
+const {light_bg} = globalStyles
 
 const Container = styled('div')<any>`
   width: 100%;
@@ -13,14 +14,7 @@ const Container = styled('div')<any>`
   padding: 20px;
 `
 
-const Title = styled.h2`
-  color: ${basic_font_color};
-  font-size: 20px;
-  font-family: ${basic_font_family};
-  margin-bottom: 20px;
-`
-
-const QuantityWidget: React.FC<IQuantityWidgetProps> = ({data, color, title}) => {
+const DateWidget: React.FC<IDateWidgetProps> = ({data}) => {
   const containerRef = useRef() as MutableRefObject<HTMLDivElement>
   const parentWidth = useRef(100)
 
@@ -31,10 +25,9 @@ const QuantityWidget: React.FC<IQuantityWidgetProps> = ({data, color, title}) =>
 
   return (
     <Container ref={containerRef}>
-      <Title>{title}</Title>
-      <BarChartComponent parentWidth={parentWidth.current} color={color} data={data}/>
+      <LineChartComponent data={data} parentWidth={parentWidth.current} color={colors[4]}/>
     </Container>
   )
 }
 
-export {QuantityWidget}
+export {DateWidget}

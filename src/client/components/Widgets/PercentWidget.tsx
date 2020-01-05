@@ -1,8 +1,9 @@
-import { IPosition, IResult } from '../../models/statistics'
 import React, { MutableRefObject, useRef } from 'react'
 
+import { IPercentWidgetProps } from '../../models/statistics'
 import {PieChartWithLegend} from '../Charts/'
-import { getChartData } from '../Charts/helpers'
+import { colors } from '../../data/statistics'
+import { getChartData } from '../../helpers/statistics'
 import { globalStyles } from '../../styles/styles'
 import styled from 'styled-components'
 
@@ -13,13 +14,6 @@ const Container = styled('div')<{padding: number}>`
   background: ${light_bg};
   ${({padding}) => `padding: ${padding}px;`}
 `
-
-interface IPercentWidgetProps {
-  state: Array<IPosition | IResult>
-  dimension: string
-}
-
-const colors = ['#0088FE', '#00C49F', '#FFBB28', '#b642f5', '#f54842', '#f59342']
 
 const PercentWidget: React.FC<IPercentWidgetProps> = ({state, dimension}) => {
   const containerRef = useRef() as MutableRefObject<HTMLDivElement>

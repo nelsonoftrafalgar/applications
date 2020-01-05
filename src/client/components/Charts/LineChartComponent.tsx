@@ -1,12 +1,12 @@
 import {
-  Bar,
-  BarChart,
   CartesianGrid,
+  Line,
+  LineChart,
   Tooltip,
   XAxis,
   YAxis
 } from 'recharts'
-import { IBarChartData, IChartProps } from '../../models/statistics'
+import { IChartProps, IDateData } from '../../models/statistics'
 
 import React from 'react'
 import { globalStyles } from '../../styles/styles'
@@ -15,23 +15,23 @@ const {light_font_color, dark_bg} = globalStyles
 const style = {background: `${dark_bg}`, color: `${light_font_color}`, border: 'none'}
 const margin = {top: 5, right: 30, left: 10, bottom: 5}
 
-const BarChartComponent: React.FC<IChartProps<IBarChartData[]>> = ({data, color, parentWidth}) => {
+const LineChartComponent: React.FC<IChartProps<IDateData[]>> = ({parentWidth, color, data}) => {
   const WIDTH = parentWidth - margin.left - margin.right
 
   return (
-    <BarChart
+    <LineChart
       width={WIDTH}
       height={300}
       data={data}
       margin={margin}
     >
-      <CartesianGrid stroke={light_font_color} vertical={false} strokeDasharray='5' />
-      <XAxis dataKey='value' stroke={light_font_color}/>
+      <CartesianGrid stroke={light_font_color} strokeDasharray='5' />
+      <XAxis interval={50} dataKey='date' stroke={light_font_color}/>
       <YAxis stroke={light_font_color}/>
-      <Tooltip contentStyle={style} cursor={false}/>
-      <Bar dataKey='quantity' fill={color} />
-    </BarChart>
+      <Tooltip contentStyle={style}/>
+      <Line type='monotone' dataKey='quantity' stroke={color} dot={false} activeDot={{ r: 5 }} />
+    </LineChart>
   )
 }
 
-export {BarChartComponent}
+export {LineChartComponent}

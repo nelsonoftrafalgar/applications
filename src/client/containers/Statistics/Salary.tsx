@@ -1,13 +1,13 @@
 import { Col, Row } from '../../grid'
 import React, { useContext, useEffect } from 'react'
+import { getSalaryValues, mergeSalaryData } from '../../helpers/statistics'
 
 import { ADD_STATISTICS_SALARY } from '../../state/actions'
 import { MainContext } from '../../context/context'
 import { QuantityWidget } from '../../components/Widgets'
-import { getSalaryValues } from '../../components/Charts/helpers'
+import { colors } from '../../data/statistics'
 import { getStatisticsData } from '../../services/RESTClient'
 import { globalStyles } from '../../styles/styles'
-import { mergeSalaryData } from '../../helpers/mergeSalaryData'
 import styled from 'styled-components'
 
 const {basic_font_family, basic_font_color} = globalStyles
@@ -39,8 +39,6 @@ const Salary = () => {
       dispatch({type: ADD_STATISTICS_SALARY, payload})
     })()
   }, [])
-
-  const colors = ['#0088FE', '#00C49F', '#FFBB28', '#b642f5', '#f54842', '#f59342']
 
   const salaryMinValues = getSalaryValues(salary, 'salary_min')
   const salaryMaxValues = getSalaryValues(salary, 'salary_max')

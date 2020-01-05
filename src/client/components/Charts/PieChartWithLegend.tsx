@@ -1,18 +1,8 @@
 import {Cell, Legend, Pie, PieChart, ResponsiveContainer} from 'recharts'
-import { legendFormatter, renderCustomizedLabel } from './helpers'
+import { legendFormatter, renderCustomizedLabel } from '../../helpers/statistics'
 
+import { IPieChartWithLegendProps } from '../../models/statistics'
 import React from 'react'
-
-interface IPieChartDataItem {
-  name: string
-  value: number
-}
-
-interface IPieChartWithLegendProps {
-  data: IPieChartDataItem[]
-  colors: string[]
-  parentWidth: number
-}
 
 const PieChartWithLegend: React.FC<IPieChartWithLegendProps> = ({data, colors, parentWidth}) => {
   const renderData = data.map((_, index) => {

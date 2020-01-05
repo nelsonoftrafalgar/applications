@@ -5,6 +5,7 @@ import {
   ADD_POSITION_NAME,
   ADD_SALARY_MAX,
   ADD_SALARY_MIN,
+  ADD_STATISTICS_DATE,
   ADD_STATISTICS_POSITION,
   ADD_STATISTICS_RESULT,
   ADD_STATISTICS_SALARY,
@@ -74,6 +75,9 @@ const statisticsReducer = produce((draft: IStatisticsState, action: IAction): IS
       return draft
     case ADD_STATISTICS_SALARY:
       draft.salary = action.payload
+      return draft
+    case ADD_STATISTICS_DATE:
+      draft.date = action.payload
       return draft
     default:
       return draft
