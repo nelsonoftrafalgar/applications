@@ -16,7 +16,7 @@ export const pool = new Pool({
   port: Number(process.env.BD_PORT)
 })
 
-const port = 4000
+const port = 3000
 const app = express()
 
 app.use(cors())

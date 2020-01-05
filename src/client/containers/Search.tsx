@@ -14,6 +14,8 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
 `
 
 const Title = styled.h2`
@@ -31,7 +33,7 @@ const Search = () => {
           <SearchForm/>
         </Col>
       </Row>
-      <Row mt={'20'} expand={true}>
+      <Row pb={'20'} mt={'20'}>
         <Col size={12}>
           <SearchResults/>
         </Col>

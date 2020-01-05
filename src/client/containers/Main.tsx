@@ -1,3 +1,4 @@
+import {Position, Result, Salary} from './Statistics'
 import React, { useReducer } from 'react'
 
 import Add from './Add'
@@ -29,6 +30,11 @@ const initialMainState = {
     application_date: '',
     application_result: '',
     add_status: ''
+  },
+  statistics: {
+    position: [],
+    result: [],
+    salary: []
   }
 }
 
@@ -43,6 +49,9 @@ const Main = () => {
         <Route exact={true} path='/'/>
         <Route path='/search' component={Search}/>
         <Route path='/add' component={Add}/>
+        <Route path='/statistics/position' component={Position}/>
+        <Route path='/statistics/result' component={Result}/>
+        <Route path='/statistics/salary' component={Salary}/>
       </Container>
     </MainContext.Provider>
   )

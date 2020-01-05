@@ -5,6 +5,9 @@ import {
   ADD_POSITION_NAME,
   ADD_SALARY_MAX,
   ADD_SALARY_MIN,
+  ADD_STATISTICS_POSITION,
+  ADD_STATISTICS_RESULT,
+  ADD_STATISTICS_SALARY,
   ADD_STATUS,
   SET_SEARCH_RESULTS,
   SET_SEARCH_TYPE,
@@ -14,6 +17,7 @@ import { IAction, IMainState } from '../models/main'
 
 import { IAddState } from '../models/add'
 import { ISearchState } from '../models/search'
+import { IStatisticsState } from '../models/statistics'
 import produce from 'immer'
 
 const searchReducer = produce((draft: ISearchState, action: IAction): ISearchState => {
@@ -60,9 +64,26 @@ const addReducer = produce((draft: IAddState, action: IAction): IAddState => {
   }
 })
 
+const statisticsReducer = produce((draft: IStatisticsState, action: IAction): IStatisticsState => {
+  switch (action.type) {
+    case ADD_STATISTICS_POSITION:
+      draft.position = action.payload
+      return draft
+    case ADD_STATISTICS_RESULT:
+      draft.result = action.payload
+      return draft
+    case ADD_STATISTICS_SALARY:
+      draft.salary = action.payload
+      return draft
+    default:
+      return draft
+  }
+})
+
 export const masterReducer = (draft: IMainState, action: IAction): IMainState => {
   return {
     search: searchReducer(draft.search, action),
-    add: addReducer(draft.add, action)
+    add: addReducer(draft.add, action),
+    statistics: statisticsReducer(draft.statistics, action)
   }
 }

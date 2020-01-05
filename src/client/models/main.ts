@@ -1,9 +1,11 @@
 import { IAddState } from './add'
 import { ISearchState } from './search'
+import { IStatisticsState } from './statistics'
 
 export interface IMainState {
   search: ISearchState
   add: IAddState
+  statistics: IStatisticsState
 }
 
 export interface IMainContext {
@@ -27,3 +29,6 @@ export type ActionType =
   | 'ADD_APPLICATION_DATE'
   | 'ADD_APPLICATION_RESULT'
   | 'ADD_STATUS'
+  | 'ADD_STATISTICS_POSITION'
+  | 'ADD_STATISTICS_RESULT'
+  | 'ADD_STATISTICS_SALARY'
