@@ -6,7 +6,7 @@ const queryBuilder = require('./queryBuilder')
 
 class RequestHandler {
   statistics = (type: string) => {
-    return async (req: Request, res: Response) => {
+    return async (_: Request, res: Response) => {
       try {
         const result = await pool.query(queryBuilder.statistics(type))
         res.status(200).json(result.rows)

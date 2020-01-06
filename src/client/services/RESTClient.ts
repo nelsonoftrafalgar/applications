@@ -1,8 +1,10 @@
 import { IAddState } from '../models/add'
 
+const PORT = 3000
+
 export const getSearchResults = async (query: string, type: string) => {
   let results
-  const url = new URL('http://localhost:3000/api/search')
+  const url = new URL(`http://localhost:${PORT}/api/search`)
   const params = {query, type}
 
   url.search = new URLSearchParams(params).toString()
@@ -30,7 +32,7 @@ export const addNewApplication = async (requestBody: IAddState) => {
       body: JSON.stringify(requestBody)
     }
   try {
-    const data = await fetch('http://localhost:3000/api/add', options)
+    const data = await fetch(`http://localhost:${PORT}/api/add`, options)
     const result = await data.json()
     resultStatus = result
   } catch (error) {
@@ -43,7 +45,7 @@ export const addNewApplication = async (requestBody: IAddState) => {
 export const getStatisticsData = async (type: string) => {
   let data
   try {
-    const url = `http://localhost:3000/api/statistics/${type}`
+    const url = `http://localhost:${PORT}/api/statistics/${type}`
     const result = await fetch(url)
     data = await result.json()
   } catch (error) {

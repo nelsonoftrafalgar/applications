@@ -4,6 +4,7 @@ import { Pool } from 'pg'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import express from 'express'
+import path from 'path'
 const statistics = require('./routing/statistics')
 const search = require('./routing/search')
 const add = require('./routing/add')
@@ -28,6 +29,10 @@ app.use('/api/statistics', statistics)
 app.use('/api/search', search)
 
 app.use('/api/add', add)
+
+app.get('*', (_, res) => {
+  res.sendFile(path.join(__dirname, '../../dist/index.html'))
+})
 
 // tslint:disable-next-line: no-console
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
