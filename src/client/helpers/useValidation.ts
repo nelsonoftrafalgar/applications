@@ -1,15 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 
+import { IStringIndexObject } from '../models/main'
 import validation from '../services/validation'
-
-export interface IErrorState {
-  [key: string]: string
-}
 
 export type InputType = 'text' | 'number'
 export type SubmitValues = Array<string | number>
 
-export const useValidation = (initialErrorState: IErrorState) => {
+export const useValidation = (initialErrorState: IStringIndexObject<string>) => {
   const [formErrors, setFormErrors] = useState(initialErrorState)
   const [error, setError] = useState('')
   const [submitError, setSubmitError] = useState('')
@@ -29,7 +26,7 @@ export const useValidation = (initialErrorState: IErrorState) => {
   const validateInput = (type: InputType, value: string, placeholder: string) => {
     const isTextInput = type === 'text'
     const errorMessage = isTextInput ? textInput(value) : numberInput(value)
-    const newErrorState: IErrorState = {...formErrors}
+    const newErrorState: IStringIndexObject<string> = {...formErrors}
     newErrorState[placeholder] = errorMessage
     setSubmitError('')
     setFormErrors(newErrorState)

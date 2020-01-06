@@ -1,9 +1,17 @@
-import { ICustomLabelArgs, IDate, IDateData, IPosition, IResult, ISalary, ISalaryData } from '../models/statistics'
+import { IDate, IDateData, IPosition, IResult, ISalary } from '../models/statistics'
 
+import { IStringIndexObject } from '../models/main'
 import React from 'react'
 import { globalStyles } from '../styles/styles'
 
-export const renderCustomizedLabel = ({cx, cy, midAngle, innerRadius, outerRadius, percent}: ICustomLabelArgs) => {
+export const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent
+}: IStringIndexObject<number>) => {
   const RADIAN = Math.PI / 180
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5
   const x = cx + radius * Math.cos(-midAngle * RADIAN)
@@ -85,8 +93,8 @@ export const getDateChartData = (range: IDateData[], values: IDateData[]) => {
   })
 }
 
-export const mergeSalaryData = (min: ISalaryData[], max: ISalaryData[]) => {
-  return min.map((item: ISalaryData, index: number) => {
+export const mergeSalaryData = (min: Array<IStringIndexObject<number>>, max: Array<IStringIndexObject<number>>) => {
+  return min.map((item: IStringIndexObject<number>, index: number) => {
     return {id: item.id, salary_min: item.salary_min, salary_max: max[index].salary_max}
   })
 }

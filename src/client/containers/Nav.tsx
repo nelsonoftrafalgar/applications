@@ -31,7 +31,6 @@ const StyledLink = styled(Link)`
 
 const Nav = () => {
   const [activeNavState, setActiveNavState] = useState<INavState>(initialState)
-  const handleResetActiveState = () => setActiveNavState(initialState)
 
   const handleSetActiveItem = (name: string, firstChild: string | null, parent: string | null) => () => {
     const newState: INavState = {}
@@ -52,7 +51,7 @@ const Nav = () => {
     <NavContext.Provider value={navContextValue}>
       <Container>
         <StyledLink to='/'>
-          <Logo onClick={handleResetActiveState}>Applications</Logo>
+          <Logo onClick={handleSetActiveItem('', null, null)}>Applications</Logo>
         </StyledLink>
         {renderNav}
       </Container>

@@ -1,24 +1,22 @@
-export interface IPosition {
-  [key: string]: number | string
+import { IStringIndexObject } from './main'
+
+export interface IPosition extends IStringIndexObject<number | string> {
   id: number
   position_name: string
 }
 
-export interface IResult {
-  [key: string]: number | string
+export interface IResult extends IStringIndexObject<number | string> {
   id: number
   application_result: string
 }
 
-export interface ISalary {
-  [key: string]: number
+export interface ISalary extends IStringIndexObject<number> {
   id: number
   salary_min: number
   salary_max: number
 }
 
-export interface IDate {
-  [key: string]: number | string
+export interface IDate extends IStringIndexObject<number | string> {
   id: number
   application_date: string
 }
@@ -37,14 +35,6 @@ export interface IDateData {
 
 export interface IDateWidgetProps {
   data: IDateData[]
-}
-
-export interface ICustomLabelArgs {
-  [key: string]: number
-}
-
-export interface ISalaryData {
-  [key: string]: number
 }
 
 export interface IQuantityWidgetProps {

@@ -33,3 +33,7 @@ export type ActionType =
   | 'ADD_STATISTICS_RESULT'
   | 'ADD_STATISTICS_SALARY'
   | 'ADD_STATISTICS_DATE'
+
+export interface IStringIndexObject<T> {
+  [key: string]: T
+}
