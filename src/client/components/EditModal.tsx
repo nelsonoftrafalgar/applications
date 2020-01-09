@@ -118,7 +118,8 @@ const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
   const handleFormChange = (actionType: ActionType) => (e: React.ChangeEvent<HTMLInputElement>) => {
     const {value, placeholder, type: inputType} = e.currentTarget
     validateInput(inputType as InputType, value, placeholder)
-    dispatch({type: actionType, payload: value})
+    const payload = inputType === 'number' ? +value : value
+    dispatch({type: actionType, payload})
   }
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

@@ -28,101 +28,41 @@ import { IAddState } from '../models/add'
 import { IEditState } from '../models/edit'
 import { ISearchState } from '../models/search'
 import { IStatisticsState } from '../models/statistics'
-import produce from 'immer'
+import { reducerCreator } from './reducerCreator'
 
-const searchReducer = produce((draft: ISearchState, action: IAction): ISearchState => {
-  switch (action.type) {
-    case SET_SEARCH_VALUE:
-      draft.value = action.payload
-      return draft
-    case SET_SEARCH_TYPE:
-      draft.type = action.payload
-      return draft
-    case SET_SEARCH_RESULTS:
-      draft.results = action.payload
-      return draft
-    default:
-      return draft
-  }
-})
+export const searchReducer = reducerCreator<ISearchState>()
+  .case(SET_SEARCH_VALUE, 'value')
+  .case(SET_SEARCH_TYPE, 'type')
+  .case(SET_SEARCH_RESULTS, 'results')
+  .build()
 
-const addReducer = produce((draft: IAddState, action: IAction): IAddState => {
-  switch (action.type) {
-    case ADD_COMPANY_NAME:
-      draft.company_name = action.payload
-      return draft
-    case ADD_POSITION_NAME:
-      draft.position_name = action.payload
-      return draft
-    case ADD_SALARY_MIN:
-      draft.salary_min = +action.payload
-      return draft
-    case ADD_SALARY_MAX:
-      draft.salary_max = +action.payload
-      return draft
-    case ADD_APPLICATION_DATE:
-      draft.application_date = action.payload
-      return draft
-    case ADD_APPLICATION_RESULT:
-      draft.application_result = action.payload
-      return draft
-    case ADD_STATUS:
-      draft.add_status = action.payload
-      return draft
-    default:
-      return draft
-  }
-})
+const addReducer = reducerCreator<IAddState>()
+  .case(ADD_COMPANY_NAME, 'company_name')
+  .case(ADD_POSITION_NAME, 'position_name')
+  .case(ADD_SALARY_MIN, 'salary_min')
+  .case(ADD_SALARY_MAX, 'salary_max')
+  .case(ADD_APPLICATION_DATE, 'application_date')
+  .case(ADD_APPLICATION_RESULT, 'application_result')
+  .case(ADD_STATUS, 'add_status')
+  .build()
 
-const statisticsReducer = produce((draft: IStatisticsState, action: IAction): IStatisticsState => {
-  switch (action.type) {
-    case ADD_STATISTICS_POSITION:
-      draft.position = action.payload
-      return draft
-    case ADD_STATISTICS_RESULT:
-      draft.result = action.payload
-      return draft
-    case ADD_STATISTICS_SALARY:
-      draft.salary = action.payload
-      return draft
-    case ADD_STATISTICS_DATE:
-      draft.date = action.payload
-      return draft
-    default:
-      return draft
-  }
-})
+const statisticsReducer = reducerCreator<IStatisticsState>()
+  .case(ADD_STATISTICS_POSITION, 'position')
+  .case(ADD_STATISTICS_RESULT, 'result')
+  .case(ADD_STATISTICS_SALARY, 'salary')
+  .case(ADD_STATISTICS_DATE, 'date')
+  .build()
 
-const editReducer = produce((draft: IEditState, action: IAction): IEditState => {
-  switch (action.type) {
-    case SET_EDIT_STATE:
-      draft = action.payload
-      return draft
-    case EDIT_COMPANY_NAME:
-      draft.company_name = action.payload
-      return draft
-    case EDIT_POSITION_NAME:
-      draft.position_name = action.payload
-      return draft
-    case EDIT_SALARY_MIN:
-      draft.salary_min = +action.payload
-      return draft
-    case EDIT_SALARY_MAX:
-      draft.salary_max = +action.payload
-      return draft
-    case EDIT_APPLICATION_DATE:
-      draft.application_date = action.payload
-      return draft
-    case EDIT_APPLICATION_RESULT:
-      draft.application_result = action.payload
-      return draft
-    case EDIT_STATUS:
-      draft.edit_status = action.payload
-      return draft
-    default:
-      return draft
-  }
-})
+const editReducer = reducerCreator<IEditState>()
+  .case(SET_EDIT_STATE, '')
+  .case(EDIT_COMPANY_NAME, 'company_name')
+  .case(EDIT_POSITION_NAME, 'position_name')
+  .case(EDIT_SALARY_MIN, 'salary_min')
+  .case(EDIT_SALARY_MAX, 'salary_max')
+  .case(EDIT_APPLICATION_DATE, 'application_date')
+  .case(EDIT_APPLICATION_RESULT, 'application_result')
+  .case(EDIT_STATUS, 'edit_status')
+  .build()
 
 export const masterReducer = (draft: IMainState, action: IAction): IMainState => {
   return {
