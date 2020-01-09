@@ -4,7 +4,6 @@ import { addErrors, formInputs } from '../data/add'
 
 import { ADD_STATUS } from '../state/actions'
 import { ActionType } from '../models/main'
-import { IAddFormInputsData } from '../models/add'
 import { IInputError } from '../models/search'
 import { MainContext } from '../context/context'
 import { addNewApplication } from '../services/RESTClient'
@@ -92,7 +91,7 @@ const AddForm = () => {
 
   const placeHolders = Object.keys(addErrors)
 
-  const renderInputs = formInputs.map((input: IAddFormInputsData, index: number) => {
+  const renderInputs = formInputs.map((input, index: number) => {
     return (
       <Input
         key={placeHolders[index]}

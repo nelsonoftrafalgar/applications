@@ -1,11 +1,14 @@
 import { IAddState } from './add'
+import { IEditState } from './edit'
 import { ISearchState } from './search'
 import { IStatisticsState } from './statistics'
+import { InputType } from '../helpers/useValidation'
 
 export interface IMainState {
   search: ISearchState
   add: IAddState
   statistics: IStatisticsState
+  edit: IEditState
 }
 
 export interface IMainContext {
@@ -33,7 +36,20 @@ export type ActionType =
   | 'ADD_STATISTICS_RESULT'
   | 'ADD_STATISTICS_SALARY'
   | 'ADD_STATISTICS_DATE'
+  | 'EDIT_COMPANY_NAME'
+  | 'EDIT_POSITION_NAME'
+  | 'EDIT_SALARY_MIN'
+  | 'EDIT_SALARY_MAX'
+  | 'EDIT_APPLICATION_DATE'
+  | 'EDIT_APPLICATION_RESULT'
+  | 'EDIT_STATUS'
+  | 'SET_EDIT_STATE'
 
 export interface IStringIndexObject<T> {
   [key: string]: T
+}
+
+export interface IFormInputsData {
+  action: ActionType
+  type: InputType
 }

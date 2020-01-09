@@ -15,3 +15,7 @@ export interface IAddRequestParams extends ISearchTypes {
   salary_max: number
   application_date: string
 }
+
+export interface IEditRequestParams extends IAddRequestParams {
+  id: number
+}

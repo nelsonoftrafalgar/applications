@@ -1,7 +1,8 @@
-import { IErrorState, SubmitValues } from '../helpers/useValidation'
+import { IStringIndexObject } from '../models/main'
+import { SubmitValues } from '../helpers/useValidation'
 
 export type ValidateFn = (value: string) => string
-export type ValidateSubmit = (values: SubmitValues, formErrors: IErrorState) => string
+export type ValidateSubmit = (values: SubmitValues, formErrors: IStringIndexObject<string>) => string
 
 interface IValidation {
   textInput: ValidateFn

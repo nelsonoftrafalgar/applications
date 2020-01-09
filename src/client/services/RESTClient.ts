@@ -1,4 +1,5 @@
 import { IAddState } from '../models/add'
+import { IEditState } from '../models/edit'
 
 const PORT = 3000
 
@@ -53,4 +54,24 @@ export const getStatisticsData = async (type: string) => {
   }
 
   return data
+}
+
+export const editApplication = async (requestBody: IEditState) => {
+  let resultStatus
+  const options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
+    }
+  try {
+    const data = await fetch(`http://localhost:${PORT}/api/edit`, options)
+    const result = await data.json()
+    resultStatus = result
+  } catch (error) {
+    resultStatus = error
+  }
+
+  return resultStatus
 }

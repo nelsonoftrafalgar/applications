@@ -10,6 +10,14 @@ import {
   ADD_STATISTICS_RESULT,
   ADD_STATISTICS_SALARY,
   ADD_STATUS,
+  EDIT_APPLICATION_DATE,
+  EDIT_APPLICATION_RESULT,
+  EDIT_COMPANY_NAME,
+  EDIT_POSITION_NAME,
+  EDIT_SALARY_MAX,
+  EDIT_SALARY_MIN,
+  EDIT_STATUS,
+  SET_EDIT_STATE,
   SET_SEARCH_RESULTS,
   SET_SEARCH_TYPE,
   SET_SEARCH_VALUE
@@ -17,6 +25,7 @@ import {
 import { IAction, IMainState } from '../models/main'
 
 import { IAddState } from '../models/add'
+import { IEditState } from '../models/edit'
 import { ISearchState } from '../models/search'
 import { IStatisticsState } from '../models/statistics'
 import produce from 'immer'
@@ -84,10 +93,42 @@ const statisticsReducer = produce((draft: IStatisticsState, action: IAction): IS
   }
 })
 
+const editReducer = produce((draft: IEditState, action: IAction): IEditState => {
+  switch (action.type) {
+    case SET_EDIT_STATE:
+      draft = action.payload
+      return draft
+    case EDIT_COMPANY_NAME:
+      draft.company_name = action.payload
+      return draft
+    case EDIT_POSITION_NAME:
+      draft.position_name = action.payload
+      return draft
+    case EDIT_SALARY_MIN:
+      draft.salary_min = +action.payload
+      return draft
+    case EDIT_SALARY_MAX:
+      draft.salary_max = +action.payload
+      return draft
+    case EDIT_APPLICATION_DATE:
+      draft.application_date = action.payload
+      return draft
+    case EDIT_APPLICATION_RESULT:
+      draft.application_result = action.payload
+      return draft
+    case EDIT_STATUS:
+      draft.edit_status = action.payload
+      return draft
+    default:
+      return draft
+  }
+})
+
 export const masterReducer = (draft: IMainState, action: IAction): IMainState => {
   return {
     search: searchReducer(draft.search, action),
     add: addReducer(draft.add, action),
-    statistics: statisticsReducer(draft.statistics, action)
+    statistics: statisticsReducer(draft.statistics, action),
+    edit: editReducer(draft.edit, action)
   }
 }

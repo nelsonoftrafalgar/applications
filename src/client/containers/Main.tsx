@@ -16,7 +16,7 @@ const Container = styled.div`
   background: ${globalStyles.dark_bg};
 `
 
-const initialMainState = {
+export const initialMainState = {
   search: {
     value: '',
     type: '',
@@ -36,6 +36,16 @@ const initialMainState = {
     result: [],
     salary: [],
     date: []
+  },
+  edit: {
+    id: 0,
+    company_name: '',
+    position_name: '',
+    salary_min: 0,
+    salary_max: 0,
+    application_date: '',
+    application_result: '',
+    edit_status: ''
   }
 }
 

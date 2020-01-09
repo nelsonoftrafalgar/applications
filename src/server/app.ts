@@ -8,6 +8,7 @@ import path from 'path'
 const statistics = require('./routing/statistics')
 const search = require('./routing/search')
 const add = require('./routing/add')
+const edit = require('./routing/edit')
 
 export const pool = new Pool({
   user: process.env.DB_USER,
@@ -29,6 +30,8 @@ app.use('/api/statistics', statistics)
 app.use('/api/search', search)
 
 app.use('/api/add', add)
+
+app.use('/api/edit', edit)
 
 app.get('*', (_, res) => {
   res.sendFile(path.join(__dirname, '../../dist/index.html'))

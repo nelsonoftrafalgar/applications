@@ -6,11 +6,9 @@ import {
   ADD_SALARY_MAX,
   ADD_SALARY_MIN
 } from '../state/actions'
+import { IFormInputsData, IStringIndexObject } from '../models/main'
 
-import { IAddFormInputsData } from '../models/add'
-import { IErrorState } from '../helpers/useValidation'
-
-export const addErrors: IErrorState = {
+export const addErrors: IStringIndexObject<string> = {
   'Company name': '',
   'Position name': '',
   'Salary min': '',
@@ -19,7 +17,7 @@ export const addErrors: IErrorState = {
   'Application result': ''
 }
 
-export const formInputs: IAddFormInputsData[] = [
+export const formInputs: IFormInputsData[] = [
   {action: ADD_COMPANY_NAME, type: 'text'},
   {action: ADD_POSITION_NAME, type: 'text'},
   {action: ADD_SALARY_MIN, type: 'number'},

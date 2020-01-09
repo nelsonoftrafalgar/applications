@@ -38,6 +38,18 @@ class RequestHandler {
       }
     }
   }
+
+  edit = () => {
+    return async (req: Request, res: Response) => {
+      try {
+        await pool.query(queryBuilder.edit(req.body))
+        res.status(200).json('Edited successfully')
+      } catch (error) {
+        res.status(500).json('Ooopsss!')
+        throw error
+      }
+    }
+  }
 }
 
 const requestHandler = new RequestHandler()

@@ -1,9 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import {TableHead, TableRow} from './Table'
 
+import EditModal from './EditModal'
 import { ISearchResult } from '../models/search'
 import { MainContext } from '../context/context'
+import { SET_EDIT_STATE } from '../state/actions'
 import { globalStyles } from '../styles/styles'
+import { initialMainState } from '../containers/Main'
 import styled from 'styled-components'
 
 const {light_bg} = globalStyles
@@ -21,21 +24,37 @@ const Table = styled.table`
 `
 
 const SearchResults = () => {
-  const {state: {search: {results}}} = useContext(MainContext)
+  const {dispatch, state: {search: {results}}} = useContext(MainContext)
+  const [editModalOpen, setEditModalOpen] = useState({isOpen: false, itemId: 0})
+
+  const handleOpenEditModal = (id: number, isOpen: boolean) => () => {
+    const newModalState = {isOpen, itemId: id}
+    setEditModalOpen(newModalState)
+    if (!id) {
+      dispatch({type: SET_EDIT_STATE, payload: initialMainState.edit})
+    }
+  }
 
   const renderSearchResults = results !== 'Nothing found' ? results.map((item: ISearchResult) => {
-    return <TableRow key={item.id} {...item}/>
+    return <TableRow handleOpenEditModal={handleOpenEditModal} key={item.id} {...item}/>
   }) : []
 
+  const editItem = Array.isArray(results)
+    ? results.find((result: ISearchResult) => result.id === editModalOpen.itemId)
+    : {}
+
   return (
-    <Container>
-      <Table>
-        <TableHead/>
-        <tbody>
-          {renderSearchResults}
-        </tbody>
-      </Table>
-    </Container>
+    <>
+      <Container>
+        <Table>
+          <TableHead/>
+          <tbody>
+            {renderSearchResults}
+          </tbody>
+        </Table>
+      </Container>
+      {editModalOpen.isOpen && <EditModal handleOpenEditModal={handleOpenEditModal} editItem={editItem}/>}
+    </>
   )
 }
 

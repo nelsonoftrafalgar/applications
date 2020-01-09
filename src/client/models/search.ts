@@ -19,3 +19,7 @@ export type SearchFormElementType = HTMLInputElement | HTMLSelectElement
 export interface IInputError {
   hasError: boolean
 }
+
+export interface ITableRow extends ISearchResult {
+  handleOpenEditModal: (id: number, isOpen: boolean) => () => void
+}
