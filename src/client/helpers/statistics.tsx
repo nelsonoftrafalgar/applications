@@ -34,13 +34,13 @@ export const legendFormatter = (value: string) => {
   return <span style={style}>{value}</span>
 }
 
-const getNames = <T extends IPosition | IResult | ISalary | IDate, P extends unknown> (
+const getNames = <T extends IStringIndexObject<any>, P> (
   state: T[],
   dimnesion: string
 ) => {
   const names: P[] = []
   for (const item of state) {
-    const name = item[dimnesion] as P
+    const name = item[dimnesion]
     if (name && !names.includes(name)) {
       names.push(name)
     }

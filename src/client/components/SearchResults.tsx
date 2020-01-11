@@ -1,15 +1,14 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import {TableHead, TableRow} from './Table'
 
 import EditModal from './EditModal'
 import { ISearchResult } from '../models/search'
 import { MainContext } from '../context/context'
-import { SET_EDIT_STATE } from '../state/actions'
 import { globalStyles } from '../styles/styles'
-import { initialMainState } from '../containers/Main'
 import styled from 'styled-components'
+import { useEditModalState } from '../helpers/useEditModalState'
 
-const {light_bg} = globalStyles
+const {light_bg, basic_font_color, basic_font_family, dark_bg} = globalStyles
 
 const Container = styled.div`
   width: 100%;
@@ -23,20 +22,23 @@ const Table = styled.table`
   border-spacing: 5px;
 `
 
+const Td = styled.td`
+  color: ${basic_font_color};
+  font-family: ${basic_font_family};
+  text-align: center;
+  background: ${dark_bg};
+  padding: 10px;
+`
+
 const SearchResults = () => {
   const {dispatch, state: {search: {results}}} = useContext(MainContext)
-  const [editModalOpen, setEditModalOpen] = useState({isOpen: false, itemId: 0})
-
-  const handleOpenEditModal = (id: number, isOpen: boolean) => () => {
-    const newModalState = {isOpen, itemId: id}
-    setEditModalOpen(newModalState)
-    if (!id) {
-      dispatch({type: SET_EDIT_STATE, payload: initialMainState.edit})
-    }
-  }
+  const {editModalOpen, handleOpenEditModal} = useEditModalState(dispatch)
 
   const renderSearchResults = results !== 'Nothing found' ? results.map((item: ISearchResult) => {
-    return <TableRow handleOpenEditModal={handleOpenEditModal} key={item.id} {...item}/>
+    const {id} = item
+    const keys = Object.keys(item).filter((key) => key !== 'id')
+    const data = keys.map((key, index) => <Td key={`${index} ${id}`}>{item[key]}</Td>)
+    return <TableRow handleOpenEditModal={handleOpenEditModal} id={id} key={id} data={data}/>
   }) : []
 
   const editItem = Array.isArray(results)

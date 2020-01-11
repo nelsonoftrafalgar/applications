@@ -1,12 +1,12 @@
-import { INavItemProps, INavState } from '../models/nav'
-import React, { useState } from 'react'
-import { initialState, navigation } from '../data/navigation'
-
+import { INodePage } from '../services'
 import { Link } from 'react-router-dom'
 import { NavContext } from '../context/context'
 import NavItem from '../components/NavItem'
+import React from 'react'
 import { globalStyles } from '../styles/styles'
+import { navigation } from '../data/navigation'
 import styled from 'styled-components'
+import { useNavState } from '../helpers/useNavState'
 
 const Container = styled.div`
   width: 100%;
@@ -30,20 +30,9 @@ const StyledLink = styled(Link)`
 `
 
 const Nav = () => {
-  const [activeNavState, setActiveNavState] = useState<INavState>(initialState)
-
-  const handleSetActiveItem = (name: string, firstChild: string | null, parent: string | null) => () => {
-    const newState: INavState = {}
-    const stateKeys = Object.keys(activeNavState)
-
-    stateKeys.forEach((key) => {
-      newState[key] = key === name || parent === key || firstChild === key
-    })
-    setActiveNavState(newState)
-  }
-
+  const {activeNavState, handleSetActiveItem} = useNavState()
   const navContextValue = {activeNavState, handleSetActiveItem}
-  const renderNav = navigation.map((item: INavItemProps) => {
+  const renderNav = navigation.map((item: INodePage) => {
     return <NavItem key={item.name} {...item}/>
   })
 

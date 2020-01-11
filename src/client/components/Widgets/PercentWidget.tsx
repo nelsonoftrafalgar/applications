@@ -25,7 +25,7 @@ const PercentWidget: React.FC<IPercentWidgetProps> = ({state, dimension}) => {
     parentWidth.current = width
   }
 
-  const chartData = getChartData(state, dimension)
+  const chartData = getChartData<IPercentWidgetProps['state'][0]>(state, dimension)
   const widthProps = parentWidth.current - (padding * 2)
 
   return (

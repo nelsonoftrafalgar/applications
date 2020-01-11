@@ -1,4 +1,6 @@
-export interface ISearchResult {
+import { IStringIndexObject } from './main'
+
+export interface ISearchResult extends IStringIndexObject<string | number> {
   id: number
   company_name: string
   position_name: string
@@ -20,6 +22,8 @@ export interface IInputError {
   hasError: boolean
 }
 
-export interface ITableRow extends ISearchResult {
+export interface ITableRow {
+  id: number
+  data: JSX.Element[]
   handleOpenEditModal: (id: number, isOpen: boolean) => () => void
 }

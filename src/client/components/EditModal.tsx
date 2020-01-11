@@ -1,16 +1,18 @@
-import { ActionType, IStringIndexObject } from '../models/main'
 import { Col, Row } from '../grid'
 import { EDIT_STATUS, SET_EDIT_STATE } from '../state/actions'
-import { IInputError, ISearchResult } from '../models/search'
-import { InputType, useValidation } from '../helpers/useValidation'
 import React, { useContext, useEffect } from 'react'
+import { editFormInputs, validationErrors } from '../data/form'
 
+import { IEditState } from '../models/edit'
+import { ISearchResult } from '../models/search'
+import { IStringIndexObject } from '../models/main'
 import { MainContext } from '../context/context'
-import { addErrors } from '../data/add'
+import { createFormChange } from '../helpers/create-form-change'
+import { createFormSubmit } from '../helpers/create-form-submit'
 import { editApplication } from '../services/RESTClient'
-import { formInputs } from '../data/edit'
 import { globalStyles } from '../styles/styles'
 import styled from 'styled-components'
+import { useValidation } from '../helpers/useValidation'
 
 const {
   light_bg,
@@ -80,9 +82,9 @@ const Form = styled.form`
   flex-direction: column;
 `
 
-const Status = styled('p')<IInputError>`
+const Status = styled.p`
   font-family: ${basic_font_family};
-  ${({hasError}) =>  `color: ${hasError ? form_error_color : form_success_color};`}
+  color: ${form_success_color};
 `
 
 const Error = styled.p`
@@ -105,7 +107,7 @@ interface IEditModal {
 }
 
 const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
-  const {error, submitError, validateInput, validateSubmit} = useValidation(addErrors)
+  const {error, submitError, validateInput, validateSubmit} = useValidation(validationErrors)
   const {dispatch, state} = useContext(MainContext)
   const {edit_status} = state.edit
 
@@ -115,31 +117,20 @@ const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
     dispatch({type: SET_EDIT_STATE, payload: initialEditState})
   }, [])
 
-  const handleFormChange = (actionType: ActionType) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {value, placeholder, type: inputType} = e.currentTarget
-    validateInput(inputType as InputType, value, placeholder)
-    const payload = inputType === 'number' ? +value : value
-    dispatch({type: actionType, payload})
-  }
-
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const requestBody = {...state.edit}
-    delete requestBody.edit_status
-    const values = Object.values(requestBody)
-    const istValid = validateSubmit(values)
-
-    if (!istValid) {
-      const payload = await editApplication(requestBody)
-      dispatch({type: EDIT_STATUS, payload})
-      setTimeout(() => dispatch({type: EDIT_STATUS, payload: ''}), 3000)
-    }
-  }
+  const handleFormChange = createFormChange(validateInput, dispatch)
+  const handleFormSubmit = createFormSubmit<IEditState>(
+    validateSubmit,
+    dispatch,
+    state.edit,
+    'edit_status',
+    EDIT_STATUS,
+    editApplication
+  )
 
   const editKeys = Object.keys(editItem)
-  const placeHolders = Object.keys(addErrors)
+  const placeHolders = Object.keys(validationErrors)
 
-  const renderInputs = formInputs.map((item, index) => {
+  const renderInputs = editFormInputs.map((item, index) => {
     const key = editKeys[index + 1]
     const value = state.edit[key]
     return (
@@ -153,8 +144,6 @@ const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
     )
   })
 
-  const hasError = edit_status !== 'Edited successfully'
-
   return (
     <Background>
       <Container>
@@ -165,7 +154,7 @@ const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
             <Form onSubmit={handleFormSubmit}>
               {renderInputs}
               <Button type='submit'>Submit</Button>
-              {edit_status && <Status hasError={hasError}>Edited successfully</Status>}
+              {edit_status && <Status>Edited successfully</Status>}
               {error && <Error>{error}</Error>}
               {submitError && <Error>{submitError}</Error>}
             </Form>

@@ -25,7 +25,7 @@ class Validation implements IValidation {
 
   textInput = (value: string) => {
     const isEmpty = !value
-    const regex = /^[a-z_.A-Z0-9\s]*$/
+    const regex = /^[a-z_.-A-Z0-9\s]*$/
     const hasSpecialChars = !regex.test(value)
     if (isEmpty) {
       this.error = 'No empty inputs'

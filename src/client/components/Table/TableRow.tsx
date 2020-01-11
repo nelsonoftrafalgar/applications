@@ -22,24 +22,10 @@ const Button = styled.button`
   font-family: ${basic_font_family};
 `
 
-const TableRow: React.FC<ITableRow> = ({
-  company_name,
-  position_name,
-  salary_min,
-  salary_max,
-  application_date,
-  application_result,
-  id,
-  handleOpenEditModal
-}) => {
+const TableRow: React.FC<ITableRow> = ({handleOpenEditModal, id, data}) => {
   return (
     <tr>
-      <Td>{company_name}</Td>
-      <Td>{position_name}</Td>
-      <Td>{salary_min}</Td>
-      <Td>{salary_max}</Td>
-      <Td>{application_date}</Td>
-      <Td>{application_result}</Td>
+      {data}
       <Td><Button onClick={handleOpenEditModal(id, true)}>Edit</Button></Td>
     </tr>
   )

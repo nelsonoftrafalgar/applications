@@ -1,6 +1,6 @@
 export interface INavItemProps {
   name: string
-  icon: string
+  icon?: string
   sub_group?: INavItemSubGroup[]
   path: string
 }

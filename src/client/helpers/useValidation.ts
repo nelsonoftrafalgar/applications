@@ -5,6 +5,8 @@ import validation from '../services/validation'
 
 export type InputType = 'text' | 'number'
 export type SubmitValues = Array<string | number>
+export type ValidateInput = (type: InputType, value: string, placeholder: string) => void
+export type ValidateSubmit = (values: SubmitValues) => string
 
 export const useValidation = (initialErrorState: IStringIndexObject<string>) => {
   const [formErrors, setFormErrors] = useState(initialErrorState)
