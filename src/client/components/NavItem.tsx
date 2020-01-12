@@ -1,15 +1,24 @@
 import { IActiveNavItem, INavItemProps, INavItemSubGroup } from '../models/nav'
 import React, { useContext } from 'react'
 
-import { Link } from 'react-router-dom'
 import { NavContext } from '../context/context'
 import NavSubItem from './NavSubItem'
+import { StyledLink } from '../styles'
 import { globalStyles } from '../styles/styles'
 import styled from 'styled-components'
 
+const {
+  border_radius,
+  dark_bg,
+  light_bg,
+  nav_dot_color,
+  light_font_color,
+  basic_font_family
+} = globalStyles
+
 export const Container = styled('button')<IActiveNavItem>`
-  border-radius: ${globalStyles.border_radius};
-  ${({isActive}) => `background: ${isActive ? globalStyles.dark_bg : globalStyles.light_bg};`}
+  border-radius: ${border_radius};
+  ${({isActive}) => `background: ${isActive ? dark_bg : light_bg};`}
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -28,27 +37,22 @@ export const Dot = styled('span')<IActiveNavItem>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  ${({isActive}) => `background: ${isActive ? globalStyles.nav_dot_color : globalStyles.light_bg};`}
+  ${({isActive}) => `background: ${isActive ? nav_dot_color : light_bg};`}
   margin: 0 5px 0 auto;
 `
 
 const Chevron = styled('span')<IActiveNavItem>`
-  color: ${globalStyles.light_font_color};
+  color: ${light_font_color};
   ${({isActive}) => `transform: rotate(${isActive ? '90deg' : '270deg'});`}
   transition: transform .2s ease;
   margin: 0 5px 0 auto;
 `
 
 export const Section = styled.p`
-  color: ${globalStyles.light_font_color};
+  color: ${light_font_color};
   font-size: 15px;
-  font-family: ${globalStyles.basic_font_family};
+  font-family: ${basic_font_family};
   margin-left: 10px;
-`
-
-export const StyledLink = styled(Link)`
-  width: 100%;
-  text-decoration: none;
 `
 
 const SubGroupContainer = styled('div')<IActiveNavItem>`

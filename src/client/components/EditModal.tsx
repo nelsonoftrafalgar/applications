@@ -1,3 +1,4 @@
+import {Button, Error, Form, Input, Status, Title} from '../styles'
 import { Col, Row } from '../grid'
 import { EDIT_STATUS, SET_EDIT_STATE } from '../state/actions'
 import React, { useContext, useEffect } from 'react'
@@ -14,15 +15,7 @@ import { globalStyles } from '../styles/styles'
 import styled from 'styled-components'
 import { useValidation } from '../helpers/useValidation'
 
-const {
-  light_bg,
-  light_font_color,
-  dark_bg,
-  basic_font_family,
-  form_error_color,
-  form_success_color,
-  basic_font_color
-} = globalStyles
+const {light_bg, basic_font_color} = globalStyles
 
 const Background = styled.div`
   width: 100%;
@@ -43,29 +36,6 @@ const Container = styled.div`
   padding: 20px;
 `
 
-const Input = styled.input`
-  width: 200px;
-  height: 40px;
-  border-radius: 5px;
-  padding-left: 10px;
-  background: ${dark_bg};
-  color: ${light_font_color};
-  font-size: 16px;
-  margin-bottom: 20px;
-  font-family: ${basic_font_family};
-`
-
-const Button = styled.button`
-  border-radius: 50px;
-  padding: 10px;
-  background: ${dark_bg};
-  color: ${light_font_color};
-  font-size: 16px;
-  cursor: pointer;
-  font-family: ${basic_font_family};
-  margin-bottom: 20px;
-`
-
 const CloseButton = styled.button`
   position: absolute;
   top: 50px;
@@ -74,31 +44,6 @@ const CloseButton = styled.button`
   color: ${basic_font_color};
   font-size: 25px;
   cursor: pointer;
-`
-
-const Form = styled.form`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-`
-
-const Status = styled.p`
-  font-family: ${basic_font_family};
-  color: ${form_success_color};
-`
-
-const Error = styled.p`
-  font-family: ${basic_font_family};
-  color: ${form_error_color};
-  margin-bottom: 20px;
-`
-
-const Title = styled.h2`
-  color: ${basic_font_color};
-  font-size: 20px;
-  font-family: ${basic_font_family};
-  margin-bottom: 20px;
-  text-align: center;
 `
 
 interface IEditModal {
@@ -135,6 +80,7 @@ const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
     const value = state.edit[key]
     return (
       <Input
+        margin={'0 0 20px 0'}
         key={index}
         value={value}
         type={item.type}
@@ -149,11 +95,11 @@ const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
       <Container>
         <Row>
           <Col size={12}>
-            <Title>Edit</Title>
+            <Title text_align={'center'} margin={'0 0 20px 0'}>Edit</Title>
             <CloseButton onClick={handleOpenEditModal(0, false)}>&#10006;</CloseButton>
-            <Form onSubmit={handleFormSubmit}>
+            <Form flex_direction={'column'} onSubmit={handleFormSubmit}>
               {renderInputs}
-              <Button type='submit'>Submit</Button>
+              <Button padding={'10px'} margin={'0 0 20px 0'} type='submit'>Submit</Button>
               {edit_status && <Status>Edited successfully</Status>}
               {error && <Error>{error}</Error>}
               {submitError && <Error>{submitError}</Error>}

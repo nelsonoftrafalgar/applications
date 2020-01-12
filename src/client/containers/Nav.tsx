@@ -1,17 +1,19 @@
 import { INodePage } from '../services'
-import { Link } from 'react-router-dom'
 import { NavContext } from '../context/context'
 import NavItem from '../components/NavItem'
 import React from 'react'
+import { StyledLink } from '../styles'
 import { globalStyles } from '../styles/styles'
 import { navigation } from '../data/navigation'
 import styled from 'styled-components'
 import { useNavState } from '../helpers/useNavState'
 
+const {light_bg, basic_font_family, basic_font_color} = globalStyles
+
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background: ${globalStyles.light_bg};
+  background: ${light_bg};
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -19,13 +21,9 @@ const Container = styled.div`
 `
 
 const Logo = styled.h1`
-  color: ${globalStyles.basic_font_color};
+  color: ${basic_font_color};
   font-size: 20px;
-  font-family: ${globalStyles.basic_font_family};
-`
-
-const StyledLink = styled(Link)`
-  align-self: flex-start;
+  font-family: ${basic_font_family};
   margin-bottom: 10px;
 `
 

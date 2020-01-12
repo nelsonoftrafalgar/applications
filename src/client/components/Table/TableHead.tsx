@@ -3,9 +3,11 @@ import { globalStyles } from '../../styles/styles'
 import { searchTableHead } from '../../data/searchTable'
 import styled from 'styled-components'
 
+const {basic_font_color, basic_font_family} = globalStyles
+
 const Th = styled.th`
-  color: ${globalStyles.basic_font_color};
-  font-family: ${globalStyles.basic_font_family};
+  color: ${basic_font_color};
+  font-family: ${basic_font_family};
   padding: 10px;
 `
 

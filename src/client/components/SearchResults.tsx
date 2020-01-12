@@ -4,11 +4,12 @@ import {TableHead, TableRow} from './Table'
 import EditModal from './EditModal'
 import { ISearchResult } from '../models/search'
 import { MainContext } from '../context/context'
+import { Td } from '../styles'
 import { globalStyles } from '../styles/styles'
 import styled from 'styled-components'
 import { useEditModalState } from '../helpers/useEditModalState'
 
-const {light_bg, basic_font_color, basic_font_family, dark_bg} = globalStyles
+const {light_bg} = globalStyles
 
 const Container = styled.div`
   width: 100%;
@@ -20,14 +21,6 @@ const Container = styled.div`
 const Table = styled.table`
   width: 100%;
   border-spacing: 5px;
-`
-
-const Td = styled.td`
-  color: ${basic_font_color};
-  font-family: ${basic_font_family};
-  text-align: center;
-  background: ${dark_bg};
-  padding: 10px;
 `
 
 const SearchResults = () => {

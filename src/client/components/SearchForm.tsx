@@ -1,3 +1,4 @@
+import {Button, Error, Form, Input} from '../styles'
 import React, { useContext } from 'react'
 import { SET_SEARCH_RESULTS, SET_SEARCH_TYPE, SET_SEARCH_VALUE } from '../state/actions'
 
@@ -14,25 +15,13 @@ const {
   light_bg,
   light_font_color,
   dark_bg,
-  basic_font_family,
-  form_error_color
+  basic_font_family
 } = globalStyles
 
 const Container = styled.div`
   width: 100%;
   background: ${light_bg};
   padding: 20px;
-`
-const Input = styled.input`
-  width: 200px;
-  height: 40px;
-  border-radius: 5px;
-  padding-left: 10px;
-  background: ${dark_bg};
-  color: ${light_font_color};
-  font-size: 16px;
-  margin-right: 20px;
-  font-family: ${basic_font_family};
 `
 
 const Select = styled.select`
@@ -49,31 +38,9 @@ const Select = styled.select`
   cursor: pointer;
 `
 
-const Button = styled.button`
-  border-radius: 50px;
-  padding: 10px 20px;
-  background: ${dark_bg};
-  color: ${light_font_color};
-  font-size: 16px;
-  cursor: pointer;
-  font-family: ${basic_font_family};
-  margin-right: 20px;
-`
-
-const Form = styled.form`
-  display: flex;
-  align-items: center;
-`
-
 const EmptySearch = styled.p`
   font-family: ${basic_font_family};
   color: ${light_font_color};
-  margin-right: 20px;
-`
-
-const Error = styled.p`
-  font-family: ${basic_font_family};
-  color: ${form_error_color};
   margin-right: 20px;
 `
 
@@ -105,6 +72,7 @@ const SearchForm = () => {
     <Container>
       <Form onSubmit={handleFormSubmit}>
         <Input
+          margin={'0 20px 0 0'}
           onChange={handleFormChange(SET_SEARCH_VALUE)}
           placeholder='Search'
           type='text'
@@ -115,7 +83,7 @@ const SearchForm = () => {
           <option aria-selected={false} value='position_name'>position</option>
           <option aria-selected={false} value='application_result'>result</option>
         </Select>
-        <Button type='submit'>Submit</Button>
+        <Button padding={'10px 20px'} margin={'0 20px 0 0'} type='submit'>Submit</Button>
         {isEmptySearch && <EmptySearch>{results}</EmptySearch>}
         {error && <Error>{error}</Error>}
         {submitError && <Error>{submitError}</Error>}

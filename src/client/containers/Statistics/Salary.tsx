@@ -1,5 +1,6 @@
 import { Col, Row } from '../../grid'
 import React, { useContext, useEffect } from 'react'
+import {Section, Title} from '../../styles'
 import { getSalaryValues, mergeSalaryData } from '../../helpers/statistics'
 
 import { ADD_STATISTICS_SALARY } from '../../state/actions'
@@ -7,26 +8,6 @@ import { MainContext } from '../../context/context'
 import { QuantityWidget } from '../../components/Widgets'
 import { colors } from '../../data/statistics'
 import { getStatisticsData } from '../../services/RESTClient'
-import { globalStyles } from '../../styles/styles'
-import styled from 'styled-components'
-
-const {basic_font_family, basic_font_color} = globalStyles
-
-const Container = styled.div`
-  width: 100%;
-  padding: 20px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  scrollbar-width: none;
-`
-
-const Title = styled.h2`
-  color: ${basic_font_color};
-  font-size: 20px;
-  font-family: ${basic_font_family};
-`
 
 const Salary = () => {
   const {dispatch, state: {statistics: {salary}}} = useContext(MainContext)
@@ -44,7 +25,7 @@ const Salary = () => {
   const salaryMaxValues = getSalaryValues(salary, 'salary_max')
 
   return (
-    <Container>
+    <Section scrollOverflow={true}>
       <Title>Salary</Title>
       <Row mt={'20'}>
         <Col size={12}>
@@ -56,7 +37,7 @@ const Salary = () => {
           <QuantityWidget title={'Max salaries'} data={salaryMaxValues} color={colors[2]}/>
         </Col>
       </Row>
-    </Container>
+    </Section>
   )
 }
 

@@ -10,10 +10,12 @@ import { masterReducer } from '../state/reducers'
 import produce from 'immer'
 import styled from 'styled-components'
 
+const {dark_bg} = globalStyles
+
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background: ${globalStyles.dark_bg};
+  background: ${dark_bg};
 `
 
 export const initialMainState = {
