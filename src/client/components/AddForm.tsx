@@ -10,7 +10,7 @@ import { createFormChange } from '../helpers/create-form-change'
 import { createFormSubmit } from '../helpers/create-form-submit'
 import { globalStyles } from '../styles/styles'
 import styled from 'styled-components'
-import { useValidation } from '../helpers/useValidation'
+import { useValidation } from '../helpers'
 
 const {light_bg} = globalStyles
 

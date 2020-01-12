@@ -1,77 +1,22 @@
 import { IAddState } from '../models/add'
 import { IEditState } from '../models/edit'
+import { handleRequest } from '../helpers'
+import { request } from './request'
 
-const PORT = 3000
+const {search, add, statistics , edit} = request
 
 export const getSearchResults = async (query: string, type: string) => {
-  let results
-  const url = new URL(`http://localhost:${PORT}/api/search`)
-  const params = {query, type}
-
-  url.search = new URLSearchParams(params).toString()
-
-  try {
-    const data = await fetch(url as any)
-    results = await data.json()
-    if (!results.length) {
-      results = 'Nothing found'
-    }
-  } catch (er) {
-    throw new Error(er)
-  }
-
-  return results
+  return handleRequest(search(query, type))
 }
 
 export const addNewApplication = async (requestBody: IAddState) => {
-  let resultStatus
-  const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
-    }
-  try {
-    const data = await fetch(`http://localhost:${PORT}/api/add`, options)
-    const result = await data.json()
-    resultStatus = result
-  } catch (error) {
-    resultStatus = error
-  }
-
-  return resultStatus
+  return handleRequest(add<IAddState>('POST', requestBody))
 }
 
 export const getStatisticsData = async (type: string) => {
-  let data
-  try {
-    const url = `http://localhost:${PORT}/api/statistics/${type}`
-    const result = await fetch(url)
-    data = await result.json()
-  } catch (error) {
-    throw new Error(error)
-  }
-
-  return data
+  return handleRequest(statistics(type))
 }
 
 export const editApplication = async (requestBody: IEditState) => {
-  let resultStatus
-  const options = {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
-    }
-  try {
-    const data = await fetch(`http://localhost:${PORT}/api/edit`, options)
-    const result = await data.json()
-    resultStatus = result
-  } catch (error) {
-    resultStatus = error
-  }
-
-  return resultStatus
+  return handleRequest(edit<IEditState>('PUT', requestBody))
 }

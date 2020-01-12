@@ -19,8 +19,9 @@ class RequestHandler {
   search = () => {
     return async (req: Request, res: Response) => {
       try {
-        const result = await pool.query(queryBuilder.search(req.query))
-        res.status(200).json(result.rows)
+        const {rows, rowCount} = await pool.query(queryBuilder.search(req.query))
+        const data = rowCount ? rows : 'Nothing found'
+        res.status(200).json(data)
       } catch (error) {
         throw error
       }
@@ -33,7 +34,6 @@ class RequestHandler {
         await pool.query(queryBuilder.add(req.body))
         res.status(200).json('Added successfully')
       } catch (error) {
-        res.status(500).json('Ooopsss!')
         throw error
       }
     }
@@ -45,7 +45,6 @@ class RequestHandler {
         await pool.query(queryBuilder.edit(req.body))
         res.status(200).json('Edited successfully')
       } catch (error) {
-        res.status(500).json('Ooopsss!')
         throw error
       }
     }
