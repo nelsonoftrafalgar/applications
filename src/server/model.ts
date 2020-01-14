@@ -19,3 +19,7 @@ export interface IAddRequestParams extends ISearchTypes {
 export interface IEditRequestParams extends IAddRequestParams {
   id: number
 }
+
+export interface IAddBadCompanyRequestParams {
+  company_name: string
+}

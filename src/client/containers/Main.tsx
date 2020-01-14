@@ -2,6 +2,7 @@ import {Date, Position, Result, Salary} from './Statistics'
 import React, { useReducer } from 'react'
 
 import Add from './Add'
+import Bad from './Bad'
 import { MainContext } from '../context/context'
 import {Route} from 'react-router-dom'
 import Search from './Search'
@@ -33,6 +34,11 @@ export const initialMainState = {
     application_result: '',
     add_status: ''
   },
+  bad: {
+    company_name: '',
+    results: [],
+    bad_add_status: ''
+  },
   statistics: {
     position: [],
     result: [],
@@ -62,6 +68,7 @@ const Main = () => {
         <Route exact={true} path='/'/>
         <Route path='/search' component={Search}/>
         <Route path='/add' component={Add}/>
+        <Route path='/bad' component={Bad}/>
         <Route path='/statistics/position' component={Position}/>
         <Route path='/statistics/result' component={Result}/>
         <Route path='/statistics/salary' component={Salary}/>

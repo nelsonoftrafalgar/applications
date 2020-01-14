@@ -1,6 +1,7 @@
 import {
   ADD_APPLICATION_DATE,
   ADD_APPLICATION_RESULT,
+  ADD_BAD_COMPANY_NAME,
   ADD_COMPANY_NAME,
   ADD_POSITION_NAME,
   ADD_SALARY_MAX,
@@ -39,4 +40,8 @@ export const addFormInputs: IFormInputsData[] = [
   {action: ADD_SALARY_MAX, type: 'number'},
   {action: ADD_APPLICATION_DATE, type: 'text'},
   {action: ADD_APPLICATION_RESULT, type: 'text'}
+]
+
+export const badFormInputs: IFormInputsData[] = [
+  {action: ADD_BAD_COMPANY_NAME, type: 'text'}
 ]

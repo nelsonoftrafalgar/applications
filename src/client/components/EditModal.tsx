@@ -67,7 +67,7 @@ const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
     validateSubmit,
     dispatch,
     state.edit,
-    'edit_status',
+    ['edit_status'],
     EDIT_STATUS,
     editApplication
   )

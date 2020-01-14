@@ -1,4 +1,5 @@
 import { IAddState } from './add'
+import { IBadState } from './bad'
 import { IEditState } from './edit'
 import { ISearchState } from './search'
 import { IStatisticsState } from './statistics'
@@ -7,6 +8,7 @@ import { InputType } from '../helpers/useValidation'
 export interface IMainState {
   search: ISearchState
   add: IAddState
+  bad: IBadState
   statistics: IStatisticsState
   edit: IEditState
 }
@@ -44,6 +46,9 @@ export type ActionType =
   | 'EDIT_APPLICATION_RESULT'
   | 'EDIT_STATUS'
   | 'SET_EDIT_STATE'
+  | 'ADD_BAD_COMPANY_NAME'
+  | 'BAD_ADD_STATUS'
+  | 'GET_BAD_COMPANIES'
 
 export interface IStringIndexObject<T> {
   [key: string]: T

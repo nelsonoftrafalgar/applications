@@ -9,6 +9,7 @@ const statistics = require('./routing/statistics')
 const search = require('./routing/search')
 const add = require('./routing/add')
 const edit = require('./routing/edit')
+const bad = require('./routing/bad')
 
 export const pool = new Pool({
   user: process.env.DB_USER,
@@ -26,12 +27,10 @@ app.use(bodyParser.json())
 app.use(express.static('dist'))
 
 app.use('/api/statistics', statistics)
-
 app.use('/api/search', search)
-
 app.use('/api/add', add)
-
 app.use('/api/edit', edit)
+app.use('/api/bad', bad)
 
 app.get('*', (_, res) => {
   res.sendFile(path.join(__dirname, '../../dist/index.html'))

@@ -7,7 +7,7 @@ const TableRow: React.FC<ITableRow> = ({handleOpenEditModal, id, data}) => {
   return (
     <tr>
       {data}
-      <Td><Button onClick={handleOpenEditModal(id, true)}>Edit</Button></Td>
+      {handleOpenEditModal && <Td><Button onClick={handleOpenEditModal(id, true)}>Edit</Button></Td>}
     </tr>
   )
 }

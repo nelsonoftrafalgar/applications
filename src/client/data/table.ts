@@ -6,3 +6,7 @@ export const searchTableHead = [
   'Application date',
   'Application result'
 ]
+
+export const badTableHead = [
+  'Bad company name'
+]

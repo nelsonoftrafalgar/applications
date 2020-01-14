@@ -49,6 +49,28 @@ class RequestHandler {
       }
     }
   }
+
+  badGet = () => {
+    return async (_: Request, res: Response) => {
+      try {
+        const result = await pool.query(queryBuilder.badGet())
+        res.status(200).json(result.rows)
+      } catch (error) {
+        throw error
+      }
+    }
+  }
+
+  badPost = () => {
+    return async (req: Request, res: Response) => {
+      try {
+        await pool.query(queryBuilder.badPost(req.body))
+        res.status(200).json('Added successfully')
+      } catch (error) {
+        throw error
+      }
+    }
+  }
 }
 
 const requestHandler = new RequestHandler()

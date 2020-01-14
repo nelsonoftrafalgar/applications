@@ -1,11 +1,11 @@
 import {Button, Error, Form, Input, Status} from '../styles'
 import React, { useContext } from 'react'
-import { addFormInputs, validationErrors } from '../data/form'
+import { badFormInputs, validationErrors } from '../data/form'
 
-import { ADD_STATUS } from '../state/actions'
-import { IAddState } from '../models/add'
+import { BAD_ADD_STATUS } from '../state/actions'
+import { IBadState } from '../models/bad'
 import { MainContext } from '../context/context'
-import { addNewApplication } from '../services/RESTClient'
+import { addBadCompany } from '../services/RESTClient'
 import { createFormChange } from '../helpers/create-form-change'
 import { createFormSubmit } from '../helpers/create-form-submit'
 import { globalStyles } from '../styles/styles'
@@ -20,27 +20,27 @@ const Container = styled.div`
   padding: 20px;
 `
 
-const AddForm = () => {
+const BadForm = () => {
   const {dispatch, state} = useContext(MainContext)
   const {error, submitError, validateInput, validateSubmit} = useValidation(validationErrors)
-  const {add_status} = state.add
+  const {bad_add_status} = state.bad
 
   const handleFormChange = createFormChange(validateInput, dispatch)
-  const handleFormSubmit = createFormSubmit<IAddState>(
+  const handleFormSubmit = createFormSubmit<IBadState>(
     validateSubmit,
     dispatch,
-    state.add,
-    ['add_status'],
-    ADD_STATUS,
-    addNewApplication
+    state.bad,
+    ['bad_add_status', 'results'],
+    BAD_ADD_STATUS,
+    addBadCompany
   )
 
   const placeHolders = Object.keys(validationErrors)
 
-  const renderInputs = addFormInputs.map((input, index: number) => {
+  const renderInputs = badFormInputs.map((input, index: number) => {
     return (
       <Input
-        margin={'0 0 20px 0'}
+        margin={'0 20px 0 0'}
         key={placeHolders[index]}
         onChange={handleFormChange(input.action)}
         placeholder={placeHolders[index]}
@@ -51,10 +51,10 @@ const AddForm = () => {
 
   return (
     <Container>
-      <Form flex_direction={'column'} onSubmit={handleFormSubmit}>
+      <Form onSubmit={handleFormSubmit}>
         {renderInputs}
-        <Button margin={'0 0 20px 0'} padding={'10px 20px'} type='submit'>Submit</Button>
-        {add_status && <Status>Added successfully</Status>}
+        <Button margin={'0 20px 0 0'} padding={'10px 20px'} type='submit'>Submit</Button>
+        {bad_add_status && <Status>Added successfully</Status>}
         {error && <Error>{error}</Error>}
         {submitError && <Error>{submitError}</Error>}
       </Form>
@@ -62,4 +62,4 @@ const AddForm = () => {
   )
 }
 
-export default AddForm
+export default BadForm

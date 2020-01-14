@@ -1,6 +1,7 @@
 import {
   ADD_APPLICATION_DATE,
   ADD_APPLICATION_RESULT,
+  ADD_BAD_COMPANY_NAME,
   ADD_COMPANY_NAME,
   ADD_POSITION_NAME,
   ADD_SALARY_MAX,
@@ -10,6 +11,7 @@ import {
   ADD_STATISTICS_RESULT,
   ADD_STATISTICS_SALARY,
   ADD_STATUS,
+  BAD_ADD_STATUS,
   EDIT_APPLICATION_DATE,
   EDIT_APPLICATION_RESULT,
   EDIT_COMPANY_NAME,
@@ -17,6 +19,7 @@ import {
   EDIT_SALARY_MAX,
   EDIT_SALARY_MIN,
   EDIT_STATUS,
+  GET_BAD_COMPANIES,
   SET_EDIT_STATE,
   SET_SEARCH_RESULTS,
   SET_SEARCH_TYPE,
@@ -25,6 +28,7 @@ import {
 import { IAction, IMainState } from '../models/main'
 
 import { IAddState } from '../models/add'
+import { IBadState } from '../models/bad'
 import { IEditState } from '../models/edit'
 import { ISearchState } from '../models/search'
 import { IStatisticsState } from '../models/statistics'
@@ -64,11 +68,18 @@ const editReducer = reducerCreator<IEditState>()
   .case(EDIT_STATUS, 'edit_status')
   .build()
 
+const badReducer = reducerCreator<IBadState>()
+  .case(GET_BAD_COMPANIES, 'results')
+  .case(ADD_BAD_COMPANY_NAME, 'company_name')
+  .case(BAD_ADD_STATUS, 'bad_add_status')
+  .build()
+
 export const masterReducer = (draft: IMainState, action: IAction): IMainState => {
   return {
     search: searchReducer(draft.search, action),
     add: addReducer(draft.add, action),
     statistics: statisticsReducer(draft.statistics, action),
-    edit: editReducer(draft.edit, action)
+    edit: editReducer(draft.edit, action),
+    bad: badReducer(draft.bad, action)
   }
 }

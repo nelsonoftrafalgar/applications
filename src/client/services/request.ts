@@ -18,6 +18,10 @@ class Request {
   edit = <S>(method: string, body: S) => {
     return fetch(`${HOST}/edit`, getRequestOptions<S>(method, body))
   }
+
+  bad = <S>(method: string, body?: S) => {
+    return fetch(`${HOST}/bad`, getRequestOptions<S>(method, body))
+  }
 }
 
 export const request = new Request()

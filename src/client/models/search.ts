@@ -25,5 +25,5 @@ export interface IInputError {
 export interface ITableRow {
   id: number
   data: JSX.Element[]
-  handleOpenEditModal: (id: number, isOpen: boolean) => () => void
+  handleOpenEditModal?: (id: number, isOpen: boolean) => () => void
 }

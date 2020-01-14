@@ -6,6 +6,7 @@ import { ISearchResult } from '../models/search'
 import { MainContext } from '../context/context'
 import { Td } from '../styles'
 import { globalStyles } from '../styles/styles'
+import { searchTableHead } from '../data/table'
 import styled from 'styled-components'
 import { useEditModalState } from '../helpers/useEditModalState'
 
@@ -42,7 +43,7 @@ const SearchResults = () => {
     <>
       <Container>
         <Table>
-          <TableHead/>
+          <TableHead data={searchTableHead}/>
           <tbody>
             {renderSearchResults}
           </tbody>
