@@ -38,7 +38,7 @@ const Nav = () => {
     <NavContext.Provider value={navContextValue}>
       <Container>
         <StyledLink to='/'>
-          <Logo onClick={handleSetActiveItem('', null, null)}>Applications</Logo>
+          <Logo data-testid={'NAV-LOGO'} onClick={handleSetActiveItem('', null, null)}>Applications</Logo>
         </StyledLink>
         {renderNav}
       </Container>

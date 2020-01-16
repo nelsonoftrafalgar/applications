@@ -80,7 +80,11 @@ const NavItem: React.FC<INavItemProps> = ({icon, name, sub_group, path}) => {
   return (
     <>
       <StyledLink to={pathWithChildren}>
-        <Container isActive={isActive} onClick={handleSetActiveItem(name, firstChild, null)}>
+        <Container
+          data-testid={`${name}-NAV-ITEM`}
+          isActive={isActive}
+          onClick={handleSetActiveItem(name, firstChild, null)}
+        >
           <Icon src={icon} alt={`${name} icon`}/>
           <Section>{name}</Section>
           {!sub_group && <Dot isActive={isActive}/>}

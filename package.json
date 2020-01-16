@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack --mode development --watch",
     "server:dev": "nodemon --config \"./nodemon.json\"/",
-    "tslint": "tslint src/**/*.ts{,x} --format codeFrame"
+    "tslint": "tslint src/**/*.ts{,x} --format codeFrame",
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -51,7 +52,14 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/jest": "^24.9.0",
+    "jest": "^24.9.0",
     "nodemon": "^2.0.2",
+    "react-test-renderer": "^16.12.0",
+    "ts-jest": "^24.3.0",
     "ts-node": "^8.5.4",
     "tslint": "^5.20.1",
     "tslint-microsoft-contrib": "^6.2.0",

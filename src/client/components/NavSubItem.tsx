@@ -11,7 +11,11 @@ const NavSubItem: React.FC<INavSubItemProps> = ({name, parent, path}) => {
 
   return (
     <StyledLink to={path}>
-      <Container isActive={isActive} onClick={handleSetActiveItem(name, null, parent)}>
+      <Container
+        data-testid={`${name}-NAV-SUBITEM`}
+        isActive={isActive}
+        onClick={handleSetActiveItem(name, null, parent)}
+      >
         <Section>{name}</Section>
         <Dot isActive={isActive}/>
       </Container>
