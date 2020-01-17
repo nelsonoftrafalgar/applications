@@ -31,7 +31,7 @@ const SearchResults = () => {
   const renderSearchResults = results !== 'Nothing found' ? results.map((item: ISearchResult) => {
     const {id} = item
     const keys = Object.keys(item).filter((key) => key !== 'id')
-    const data = keys.map((key, index) => <Td key={`${index} ${id}`}>{item[key]}</Td>)
+    const data = keys.map((key, index) => <Td key={`${index} ${id}`}>{item[key as keyof ISearchResult]}</Td>)
     return <TableRow handleOpenEditModal={handleOpenEditModal} id={id} key={id} data={data}/>
   }) : []
 

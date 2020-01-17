@@ -57,7 +57,7 @@ export const getChartData = <T extends IPosition | IResult> (state: T[], dimensi
   return getNames<T, string>(state, dimension).map((name) => ({name, value: getQuantity<T>(state, name, dimension)}))
 }
 
-export const getSalaryValues = (state: ISalary[], dimnesion: string) => {
+export const getSalaryValues = (state: ISalary[], dimnesion: keyof ISalary) => {
   const values = getNames<ISalary, number>(state, dimnesion)
   return values.sort((a: number, b: number) => a - b).map((value) => {
     const quantity = state.filter((item) => item[dimnesion] === value).length
@@ -65,7 +65,7 @@ export const getSalaryValues = (state: ISalary[], dimnesion: string) => {
   })
 }
 
-export const getDateValues = (state: IDate[], dimnesion: string) => {
+export const getDateValues = (state: IDate[], dimnesion: keyof IDate) => {
   const values = getNames<IDate, string>(state, dimnesion)
   return values.map((date) => {
     const quantity = state.filter((item) => item[dimnesion] === date).length

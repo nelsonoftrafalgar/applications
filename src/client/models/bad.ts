@@ -1,6 +1,4 @@
-import { IStringIndexObject } from './main'
-
-export interface IBadResult extends IStringIndexObject<string | number> {
+export interface IBadResult {
   id: number
   company_name: string
 }

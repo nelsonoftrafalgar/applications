@@ -45,6 +45,7 @@ const AddForm = () => {
         onChange={handleFormChange(input.action)}
         placeholder={placeHolders[index]}
         type={input.type}
+        data-testid={`${placeHolders[index]}-ADD-FORM-INPUT`}
       />
     )
   })
@@ -53,7 +54,13 @@ const AddForm = () => {
     <Container>
       <Form flex_direction={'column'} onSubmit={handleFormSubmit}>
         {renderInputs}
-        <Button margin={'0 0 20px 0'} padding={'10px 20px'} type='submit'>Submit</Button>
+        <Button
+          margin={'0 0 20px 0'}
+          padding={'10px 20px'}
+          type='submit'
+        >
+          Submit
+        </Button>
         {add_status && <Status>Added successfully</Status>}
         {error && <Error>{error}</Error>}
         {submitError && <Error>{submitError}</Error>}

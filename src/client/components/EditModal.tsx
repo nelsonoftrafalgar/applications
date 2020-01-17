@@ -77,7 +77,7 @@ const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
 
   const renderInputs = editFormInputs.map((item, index) => {
     const key = editKeys[index + 1]
-    const value = state.edit[key]
+    const value = state.edit[key as keyof IEditState]
     return (
       <Input
         margin={'0 0 20px 0'}

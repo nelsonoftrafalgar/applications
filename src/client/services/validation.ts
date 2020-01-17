@@ -10,6 +10,13 @@ interface IValidation {
   submitInput: ValidateSubmit
 }
 
+export const ERRORS = {
+  emptyInput: 'No empty inputs',
+  specialInput: 'No special chars',
+  nonPositiveInput: 'Only positive numbers',
+  submit: 'Check your inputs'
+}
+
 class Validation implements IValidation {
   private error: string
 
@@ -18,19 +25,21 @@ class Validation implements IValidation {
   }
 
   numberInput = (value: string) => {
+    const {nonPositiveInput} = ERRORS
     const hasNoPositiveValue = +value < 1
-    this.error = hasNoPositiveValue ? 'Only positive numbers' : ''
+    this.error = hasNoPositiveValue ? nonPositiveInput : ''
     return this.error
   }
 
   textInput = (value: string) => {
+    const {emptyInput, specialInput} = ERRORS
     const isEmpty = !value
-    const regex = /^[a-z_.-A-Z0-9\s]*$/
+    const regex = /^[a-z_.\-A-Z0-9\s]*$/
     const hasSpecialChars = !regex.test(value)
     if (isEmpty) {
-      this.error = 'No empty inputs'
+      this.error = emptyInput
     } else if (hasSpecialChars) {
-      this.error = 'No special chars'
+      this.error = specialInput
     } else {
       this.error = ''
     }
@@ -38,10 +47,11 @@ class Validation implements IValidation {
   }
 
   submitInput = (values: Array<string | number>, formErrors: any) => {
+    const {submit} = ERRORS
     const errors = Object.values(formErrors)
     const hasErrors = errors.find((el) => el)
     const hasEmptyValues =  !values.every((value: string | number) => value)
-    this.error = hasEmptyValues || hasErrors ? 'Check your inputs' : ''
+    this.error = hasEmptyValues || hasErrors ? submit : ''
     return this.error
   }
 }

@@ -1,6 +1,4 @@
-import { IStringIndexObject } from './main'
-
-export interface ISearchResult extends IStringIndexObject<string | number> {
+export interface ISearchResult {
   id: number
   company_name: string
   position_name: string

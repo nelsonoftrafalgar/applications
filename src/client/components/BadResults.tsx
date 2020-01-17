@@ -1,8 +1,8 @@
+import { IBadResult, IBadState } from '../models/bad'
 import React, { useContext, useEffect } from 'react'
 import {TableHead, TableRow} from './Table'
 
 import { GET_BAD_COMPANIES } from '../state/actions'
-import { IBadResult } from '../models/bad'
 import { MainContext } from '../context/context'
 import { Td } from '../styles'
 import { badTableHead } from '../data/table'
@@ -37,7 +37,7 @@ const BadResults = () => {
   const renderBadResults = results.map((item: IBadResult) => {
     const {id} = item
     const keys = Object.keys(item).filter((key) => key !== 'id')
-    const data = keys.map((key, index) => <Td key={`${index} ${id}`}>{item[key]}</Td>)
+    const data = keys.map((key, index) => <Td key={`${index} ${id}`}>{item[key as keyof IBadResult]}</Td>)
     return <TableRow id={id} key={id} data={data}/>
   })
 

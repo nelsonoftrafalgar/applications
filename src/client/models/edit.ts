@@ -1,6 +1,5 @@
 import { ISearchResult } from './search'
-import { IStringIndexObject } from './main'
 
-export interface IEditState extends ISearchResult, IStringIndexObject<string | number> {
+export interface IEditState extends ISearchResult {
   edit_status: string
 }

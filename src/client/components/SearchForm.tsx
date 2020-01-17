@@ -76,14 +76,26 @@ const SearchForm = () => {
           onChange={handleFormChange(SET_SEARCH_VALUE)}
           placeholder='Search'
           type='text'
+          data-testid='SEARCH-FORM-INPUT'
         />
-        <Select placeholder='Select' onChange={handleFormChange(SET_SEARCH_TYPE)}>
+        <Select
+          data-testid='SEARCH-FORM-SELECT'
+          placeholder='Select'
+          onChange={handleFormChange(SET_SEARCH_TYPE)}
+        >
           <option aria-selected={true} value=''>Select type</option>
           <option aria-selected={false} value='company_name'>company</option>
           <option aria-selected={false} value='position_name'>position</option>
           <option aria-selected={false} value='application_result'>result</option>
         </Select>
-        <Button padding={'10px 20px'} margin={'0 20px 0 0'} type='submit'>Submit</Button>
+        <Button
+          padding={'10px 20px'}
+          margin={'0 20px 0 0'}
+          type='submit'
+          data-testid='SEARCH-FORM-SUBMIT'
+        >
+          Submit
+        </Button>
         {isEmptySearch && <EmptySearch>{results}</EmptySearch>}
         {error && <Error>{error}</Error>}
         {submitError && <Error>{submitError}</Error>}

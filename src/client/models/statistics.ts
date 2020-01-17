@@ -10,13 +10,13 @@ export interface IResult extends IStringIndexObject<number | string> {
   application_result: string
 }
 
-export interface ISalary extends IStringIndexObject<number> {
+export interface ISalary {
   id: number
   salary_min: number
   salary_max: number
 }
 
-export interface IDate extends IStringIndexObject<number | string> {
+export interface IDate {
   id: number
   application_date: string
 }
