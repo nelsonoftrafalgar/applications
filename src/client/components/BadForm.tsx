@@ -45,6 +45,7 @@ const BadForm = () => {
         onChange={handleFormChange(input.action)}
         placeholder={placeHolders[index]}
         type={input.type}
+        data-testid={`${placeHolders[index]}-BAD-FORM-INPUT`}
       />
     )
   })

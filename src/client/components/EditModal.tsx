@@ -86,6 +86,7 @@ const EditModal: React.FC<IEditModal> = ({editItem, handleOpenEditModal}) => {
         type={item.type}
         placeholder={placeHolders[index]}
         onChange={handleFormChange(item.action)}
+        data-testid={`${placeHolders[index]}-EDIT-MODAL-INPUT`}
       />
     )
   })
