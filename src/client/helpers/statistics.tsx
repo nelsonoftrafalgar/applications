@@ -34,7 +34,7 @@ export const legendFormatter = (value: string) => {
   return <span style={style}>{value}</span>
 }
 
-const getNames = <T extends IStringIndexObject<any>, P> (
+export const getNames = <T extends IStringIndexObject<any>, P> (
   state: T[],
   dimnesion: string
 ) => {
@@ -48,7 +48,7 @@ const getNames = <T extends IStringIndexObject<any>, P> (
   return names
 }
 
-const getQuantity = <T extends IPosition | IResult>(state: T[], name: string, dimension: string) => {
+export const getQuantity = <T extends IPosition | IResult>(state: T[], name: string, dimension: string) => {
   const result = state.filter((el) => el[dimension] === name)
   return result.length
 }
