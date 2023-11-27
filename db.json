@@ -1,0 +1,165 @@
+{
+    "applications" : [
+        {
+          "id": "d2cd33ff-befc-4485-b79f-167c8269deb9",
+          "company": "test company 2",
+          "min_salary": 22,
+          "max_salary": 33,
+          "status": "not interested",
+          "applied": "2023-11-20"
+        },
+        {
+          "id": "c74b1245-4ec5-4c87-a171-251c896fcc4f",
+          "company": "test company 1",
+          "min_salary": 12,
+          "max_salary": 23,
+          "status": "not interested",
+          "applied": "2002-11-11"
+        },
+        {
+          "id": "aa1706b0-4d79-4e1c-9a18-37697cb60ecf",
+          "company": "test company 4",
+          "min_salary": 20,
+          "max_salary": 30,
+          "status": "not interested",
+          "applied": "2003-02-14"
+        },
+        {
+          "id": "aa8da56f-9c58-41b8-8cac-363872133488",
+          "company": "example company 5",
+          "min_salary": 22,
+          "max_salary": 32,
+          "status": "no answer",
+          "applied": "2003-03-20"
+        },
+        {
+          "id": "8c264ecf-898f-4993-820d-9f866be38948",
+          "company": "sample company 6",
+          "min_salary": 25,
+          "max_salary": 35,
+          "status": "failed interview",
+          "applied": "2003-04-05"
+        },
+        {
+          "id": "6910c63b-825e-4f48-9af5-6c5e44de2552",
+          "company": "test company 7",
+          "min_salary": 28,
+          "max_salary": 38,
+          "status": "not interested",
+          "applied": "2003-05-10"
+        },
+        {
+          "id": "d5db8faa-48c5-460c-b0a8-9f97fd1830ae",
+          "company": "example company 8",
+          "min_salary": 30,
+          "max_salary": 40,
+          "status": "failed interview",
+          "applied": "2003-06-15"
+        },
+        {
+          "id": "7edd1038-ef8d-4926-bcdc-e32f5536c37b",
+          "company": "sample company 9",
+          "min_salary": 32,
+          "max_salary": 42,
+          "status": "bad agreement",
+          "applied": "2003-07-20"
+        },
+        {
+          "id": "b18129f2-d6a6-4831-a8a1-bd4cc77e0d7d",
+          "company": "test company 10",
+          "min_salary": 35,
+          "max_salary": 45,
+          "status": "not interested",
+          "applied": "2003-08-25"
+        },
+        {
+          "id": "66e5f205-2966-4701-b1c4-89750b56c3ea",
+          "company": "example company 11",
+          "min_salary": 38,
+          "max_salary": 48,
+          "status": "bad agreement",
+          "applied": "2003-09-30"
+        },
+        {
+          "id": "a9a52449-1f88-4759-a2e3-a0d6fd6ea744",
+          "company": "sample company 12",
+          "min_salary": 40,
+          "max_salary": 50,
+          "status": "bad agreement",
+          "applied": "2003-10-05"
+        },
+        {
+          "id": "61567bed-86f7-4da3-85cf-44f8a95dc27a",
+          "company": "test company 13",
+          "min_salary": 42,
+          "max_salary": 52,
+          "status": "not interested",
+          "applied": "2003-11-10"
+        },
+        {
+          "id": "93c7aa4a-b529-4090-b6d0-d61a8a0dc4ee",
+          "company": "example company 14",
+          "min_salary": 45,
+          "max_salary": 55,
+          "status": "no answer",
+          "applied": "2003-12-15"
+        },
+        {
+          "id": "dae7af06-a42e-4e06-998e-2753e7962012",
+          "company": "sample company 15",
+          "min_salary": 48,
+          "max_salary": 58,
+          "status": "no answer",
+          "applied": "2004-01-20"
+        },
+        {
+          "id": "289837fe-bb52-4973-85ca-002e3fa0dd3a",
+          "company": "test company 16",
+          "min_salary": 50,
+          "max_salary": 60,
+          "status": "not interested",
+          "applied": "2004-02-25"
+        },
+        {
+          "id": "008dc0e0-69f7-4b2a-8ee8-86144e470e05",
+          "company": "example company 17",
+          "min_salary": 52,
+          "max_salary": 62,
+          "status": "bad agreement",
+          "applied": "2004-03-10"
+        },
+        {
+          "id": "57e6b442-4aaa-4aa6-82ac-edd2273e793c",
+          "company": "sample company 18",
+          "min_salary": 55,
+          "max_salary": 65,
+          "status": "no answer",
+          "applied": "2004-04-15"
+        },
+        {
+          "id": "c44734e6-48ed-4311-8c99-81072ed92ddf",
+          "company": "test company 19",
+          "min_salary": 58,
+          "max_salary": 68,
+          "status": "not interested",
+          "applied": "2004-05-20"
+        },
+        {
+          "id": "c0621e73-2dd8-445c-8756-0b6ee3e4e561",
+          "company": "example company 20",
+          "min_salary": 60,
+          "max_salary": 70,
+          "status": "no answer",
+          "applied": "2004-06-25"
+        },
+        {
+          "id": "9df1b16e-848a-454d-a7d6-cf5aeb46109e",
+          "company": "test company 155",
+          "min_salary": 12,
+          "max_salary": 23,
+          "status": "no answer",
+          "applied": "2023-11-24"
+        }
+      ]
+      
+}
