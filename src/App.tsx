@@ -1,3 +1,4 @@
+import { Applications } from './components/Applications/Applications'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -13,11 +14,6 @@ const Container = styled.div`
 	grid-row-gap: 30px;
 `
 
-const Applications = styled.div`
-	grid-area: 1 / 1 / 2 / 7;
-	background: ${({ theme }) => theme.colors.backgrounds.master};
-	border-radius: ${({ theme }) => theme.borderRadius}px;
-`
 const BadCompanies = styled.div`
 	grid-area: 1 / 7 / 2 / 10;
 	background: ${({ theme }) => theme.colors.backgrounds.master};
@@ -47,7 +43,7 @@ const MaxSalaries = styled.div`
 export const App = () => {
 	return (
 		<Container>
-			<Applications>Applications</Applications>
+			<Applications />
 			<BadCompanies>BadCompanies</BadCompanies>
 			<Results>Results</Results>
 			<Timeline>Timeline</Timeline>
