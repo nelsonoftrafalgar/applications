@@ -9,7 +9,7 @@ import {
 	Title
 } from './styles'
 
-import { Button } from '../../ui/button/Button'
+import { CreateApplicationModal } from '../../modals/CreateApplicationModal'
 import { Input } from '../../ui/input/Input'
 import { flexRender } from '@tanstack/react-table'
 import { useApplications } from './hooks'
@@ -30,7 +30,7 @@ export const Applications = () => {
 					placeholder='Search'
 					isSearch
 				/>
-				<Button buttonStyle='navy'>New Application</Button>
+				<CreateApplicationModal />
 			</Header>
 			<TableWrapper>
 				<Table>

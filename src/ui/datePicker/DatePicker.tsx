@@ -6,14 +6,12 @@ import DatePicker from 'react-datepicker'
 import { DatePickerProps } from './types'
 import { FC } from 'react'
 import { formatDate } from './utils'
-import { useI18n } from '@/locales/client'
 
 const DatePickerComponent: FC<DatePickerProps> = ({
 	errorMessage,
 	onChange,
 	value
 }) => {
-	const t = useI18n()
 	const selected = value ? new Date(value) : null
 
 	const handleDateChange = (date: Date) => {
@@ -22,13 +20,13 @@ const DatePickerComponent: FC<DatePickerProps> = ({
 
 	return (
 		<div>
-			<StyledLabel>{t('ui.date')}</StyledLabel>
+			<StyledLabel>Applied</StyledLabel>
 			<DatePickerWrapper $error={!!errorMessage}>
 				<DatePicker
 					selected={selected}
 					onChange={handleDateChange}
-					dateFormat={'dd/MM/yyyy'}
-					placeholderText={t('forms.date_placeholder')}
+					dateFormat={'dd-MM-yyyy'}
+					placeholderText='Date of application'
 				/>
 			</DatePickerWrapper>
 			{errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}

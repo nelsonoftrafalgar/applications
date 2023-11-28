@@ -13,9 +13,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.colors.backgrounds.master};
-    padding: ${({ theme }) => theme.gridUnit * 5}px;
-    height: 100vh;
     font-family: sans-serif;
   }
 `

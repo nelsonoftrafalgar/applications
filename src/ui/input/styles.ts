@@ -37,7 +37,7 @@ export const StyledInput = styled(TextFieldInput)`
 
 export const StyledLabel = styled(Label)`
 	color: ${({ theme }) => theme.colors.fonts.dark};
-	font-size: ${({ theme }) => theme.fonts.size.s}px;
+	font-size: ${({ theme }) => theme.fonts.size.xs}px;
 	display: block;
 	margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
 `

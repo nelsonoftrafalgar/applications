@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 
 import { Label } from '@radix-ui/react-label'
-import { media } from '@/styles/media'
 
 export const DatePickerWrapper = styled.div<{ $error?: boolean }>`
 	margin-bottom: ${({ $error }) => ($error ? 0 : 25)}px;
@@ -14,16 +13,14 @@ export const DatePickerWrapper = styled.div<{ $error?: boolean }>`
 	}
 	.react-datepicker {
 		border-radius: ${({ theme }) => theme.borderRadius}px;
-		border: 2px solid ${({ theme }) => theme.colors.border};
 	}
 	.react-datepicker__header {
 		border-top-right-radius: ${({ theme }) => theme.borderRadius}px;
 		border-top-left-radius: ${({ theme }) => theme.borderRadius}px;
-		border-bottom: 2px solid ${({ theme }) => theme.colors.border};
-		background-color: ${({ theme }) => theme.colors.primary.white};
+		background-color: ${({ theme }) => theme.colors.backgrounds.input};
 	}
 	.react-datepicker__navigation-icon::before {
-		border-color: ${({ theme }) => theme.colors.primary.orange};
+		border-color: ${({ theme }) => theme.colors.primary.navy};
 	}
 	.react-datepicker__current-month {
 		font-size: ${({ theme }) => theme.fonts.size.xs}px;
@@ -35,45 +32,39 @@ export const DatePickerWrapper = styled.div<{ $error?: boolean }>`
 		border-radius: 0;
 	}
 	.react-datepicker__day--in-selecting-range {
-		background-color: ${({ theme }) => theme.colors.primary.orange};
+		background-color: ${({ theme }) => theme.colors.borders.dark};
 	}
 	.react-datepicker__day--selected {
-		background-color: ${({ theme }) => theme.colors.primary.orange};
+		background-color: ${({ theme }) => theme.colors.borders.dark};
 	}
 	input {
-		border: 2px solid ${({ theme }) => theme.colors.border};
+		background-color: ${({ theme }) => theme.colors.backgrounds.input};
 		padding: ${({ theme }) => theme.gridUnit * 2.5}px;
 		border-radius: ${({ theme }) => theme.borderRadius}px;
 		outline: none;
-		width: 137px;
-		${media.sm`
-			width: unset;
-		`}
+		width: 170px;
+
+		&::placeholder {
+			color: ${({ theme }) => theme.colors.fonts.light};
+		}
+
 		${({ theme, $error }) =>
 			$error &&
 			css`
-				border-color: ${theme.colors.secondary.strawberry};
+				border: 1px solid ${theme.colors.primary.red};
 			`}
-
-		&:focus-visible {
-			border: 2px solid ${({ theme }) => theme.colors.primary.charchoal};
-		}
 	}
 `
 export const StyledLabel = styled(Label)`
-	color: ${({ theme }) => theme.colors.primary.charchoal};
+	color: ${({ theme }) => theme.colors.primary.navy};
 	font-size: ${({ theme }) => theme.fonts.size.xs}px;
-	font-weight: ${({ theme }) => theme.fonts.weight.bold};
 	display: flex;
-	gap: 95px;
-	${media.sm`
-		gap: 140px;
-	`}
+	gap: 140px;
 	margin-bottom: ${({ theme }) => theme.gridUnit * 2.5}px;
 `
 
 export const ErrorMessage = styled.span`
-	color: ${({ theme }) => theme.colors.secondary.strawberry};
+	color: ${({ theme }) => theme.colors.primary.red};
 	font-size: ${({ theme }) => theme.fonts.size.xs}px;
 	margin-left: ${({ theme }) => theme.gridUnit * 3}px;
 	display: inline-block;

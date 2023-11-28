@@ -2,20 +2,14 @@ import * as Select from '@radix-ui/react-select'
 
 import styled, { css } from 'styled-components'
 
-import { ChevronDownIcon } from '@radix-ui/react-icons'
+import { CaretDownIcon } from '@radix-ui/react-icons'
 import { Label } from '@radix-ui/react-label'
-
-interface SelectTriggerProps {
-	$open: boolean
-	$error?: boolean
-}
+import { SelectTriggerProps } from './types'
 
 export const SelectTrigger = styled(Select.Trigger)<SelectTriggerProps>`
-	margin-bottom: ${({ $error }) => ($error ? 0 : 25)}px;
 	padding: ${({ theme }) => theme.gridUnit * 2.5}px;
 	font-size: ${({ theme }) => theme.fonts.size.xs}px;
-	background-color: ${({ theme }) => theme.colors.primary.white};
-	border: 2px solid ${({ theme }) => theme.colors.border};
+	background-color: ${({ theme }) => theme.colors.backgrounds.input};
 	border-radius: ${({ theme }) => theme.borderRadius}px;
 	display: inline-flex;
 	justify-content: space-between;
@@ -24,47 +18,38 @@ export const SelectTrigger = styled(Select.Trigger)<SelectTriggerProps>`
 	${({ theme, $error }) =>
 		$error &&
 		css`
-			border-color: ${theme.colors.secondary.strawberry};
+			border: 1px solid ${theme.colors.primary.red};
 		`}
 	cursor: pointer;
-	width: 200px;
-	${({ $open }) =>
-		$open &&
-		css`
-			border-bottom-right-radius: 0;
-			border-bottom-left-radius: 0;
-		`}
+	width: 170px;
+
 	&[data-placeholder] {
-		color: ${({ theme }) => theme.colors.placeholder};
+		color: ${({ theme }) => theme.colors.fonts.light};
 	}
 `
 
-export const SelectIcon = styled(ChevronDownIcon)`
+export const SelectIcon = styled(CaretDownIcon)`
 	display: flex;
 	align-items: center;
-	stroke: ${({ theme }) => theme.colors.primary.orange};
+	stroke: ${({ theme }) => theme.colors.primary.navy};
 `
 
 export const SelectContent = styled(Select.Content)`
-	background-color: ${({ theme }) => theme.colors.primary.white};
-	border-radius: ${({ theme }) => theme.borderRadius}px;
-	border: 2px solid ${({ theme }) => theme.colors.border};
-	border-top-right-radius: 0;
-	border-top-left-radius: 0;
-	border-top: 0;
-	max-height: 100px;
-	width: 200px;
+	background-color: ${({ theme }) => theme.colors.backgrounds.input};
+	border-radius: 5px;
+	max-height: 200px;
+	width: 170px;
 	z-index: 10;
+	overflow: hidden;
 `
 
 export const SelectReset = styled.p`
 	padding: ${({ theme }) => theme.gridUnit * 1.5}px;
 	padding-left: ${({ theme }) => theme.gridUnit * 2.5}px;
 	font-size: ${({ theme }) => theme.fonts.size.xs}px;
-	color: ${({ theme }) => theme.colors.placeholder};
+	color: ${({ theme }) => theme.colors.fonts.light};
 	&:hover {
-		background-color: ${({ theme }) => theme.colors.primary.orange};
-		color: ${({ theme }) => theme.colors.primary.white};
+		background-color: ${({ theme }) => theme.colors.primary.navy};
 		outline: none;
 	}
 `
@@ -79,22 +64,21 @@ export const SelectItem = styled(Select.Item)`
 	user-select: none;
 
 	&:focus {
-		background-color: ${({ theme }) => theme.colors.primary.orange};
-		color: ${({ theme }) => theme.colors.primary.white};
+		background-color: ${({ theme }) => theme.colors.primary.navy};
+		color: ${({ theme }) => theme.colors.fonts.white};
 		outline: none;
 	}
 `
 
 export const StyledLabel = styled(Label)`
-	color: ${({ theme }) => theme.colors.primary.charchoal};
+	color: ${({ theme }) => theme.colors.fonts.dark};
 	font-size: ${({ theme }) => theme.fonts.size.xs}px;
-	font-weight: ${({ theme }) => theme.fonts.weight.bold};
 	display: block;
 	margin-bottom: ${({ theme }) => theme.gridUnit * 2.5}px;
 `
 
 export const ErrorMessage = styled.span`
-	color: ${({ theme }) => theme.colors.secondary.strawberry};
+	color: ${({ theme }) => theme.colors.primary.red};
 	font-size: ${({ theme }) => theme.fonts.size.xs}px;
 	margin-left: ${({ theme }) => theme.gridUnit * 3}px;
 	display: inline-block;

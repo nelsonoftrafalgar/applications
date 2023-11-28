@@ -18,8 +18,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
 	title,
 	content,
 	open,
-	onOpenChange,
-	modalStyle
+	onOpenChange
 }) => {
 	return (
 		<Dialog.Root open={open} onOpenChange={onOpenChange}>
@@ -27,7 +26,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
 			<Dialog.Portal>
 				<DialogOverlay />
 				<DialogContent>
-					<ModalHeader $style={modalStyle}>
+					<ModalHeader>
 						<DialogTitle>{title}</DialogTitle>
 					</ModalHeader>
 					<ModalContent>{content}</ModalContent>

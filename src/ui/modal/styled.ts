@@ -2,33 +2,24 @@ import * as Dialog from '@radix-ui/react-dialog'
 
 import styled, { keyframes } from 'styled-components'
 
-import { media } from '@/styles/media'
-
 export const ModalContent = styled.div`
 	padding: ${({ theme }) => theme.gridUnit * 4}px;
 `
 
-export const ModalHeader = styled.div<{ $style: string }>`
+export const ModalHeader = styled.div`
 	padding: ${({ theme }) => theme.gridUnit * 4}px;
 
-	background-color: ${({ theme, $style }) => {
-		if ($style === 'primary') {
-			return theme.colors.primary.orange
-		}
-		if ($style === 'secondary') {
-			return theme.colors.secondary.mint
-		}
-		if ($style === 'warning') {
-			return theme.colors.secondary.strawberry
-		}
-	}};
+	background-color: ${({ theme }) => theme.colors.backgrounds.white};
 	border-top-right-radius: ${({ theme }) => theme.borderRadius}px;
 	border-top-left-radius: ${({ theme }) => theme.borderRadius}px;
 `
 
 export const DialogTitle = styled(Dialog.Title)`
-	color: ${({ theme }) => theme.colors.primary.white};
-	font-size: ${({ theme }) => theme.fonts.size.xl}px;
+	color: ${({ theme }) => theme.colors.primary.navy};
+	font-size: ${({ theme }) => theme.fonts.size.m}px;
+	font-weight: ${({ theme }) => theme.fonts.weight.normal};
+	text-align: center;
+	margin-top: ${({ theme }) => theme.gridUnit * 5}px;
 `
 
 export const overlayShow = keyframes`
@@ -41,10 +32,10 @@ export const overlayShow = keyframes`
 `
 
 export const DialogOverlay = styled(Dialog.Overlay)`
-	background-color: ${({ theme }) => theme.colors.primary.black};
+	background-color: ${({ theme }) => theme.colors.primary.navy};
 	position: fixed;
 	inset: 0;
-	opacity: 0.5;
+	opacity: 0.7;
 	animation: ${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
 `
 
@@ -60,18 +51,13 @@ export const contentShow = keyframes`
 `
 
 export const DialogContent = styled(Dialog.Content)`
-	background-color: ${({ theme }) => theme.colors.primary.white};
+	background-color: ${({ theme }) => theme.colors.backgrounds.white};
 	border-radius: ${({ theme }) => theme.borderRadius}px;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	animation: ${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
-	width: 95%;
-
-	${media.md`
-		width: unset;
-	`}
 
 	&:focus {
 		outline: none;
@@ -85,7 +71,7 @@ export const IconButton = styled.button`
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	color: ${({ theme }) => theme.colors.primary.white};
+	color: ${({ theme }) => theme.colors.primary.navy};
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -94,7 +80,7 @@ export const IconButton = styled.button`
 	cursor: pointer;
 
 	&:hover {
-		background-color: ${({ theme }) => theme.colors.primary.orange};
+		background-color: ${({ theme }) => theme.colors.backgrounds.master};
 	}
 
 	&:focus {

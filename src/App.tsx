@@ -1,6 +1,12 @@
 import { Applications } from './components/Applications/Applications'
 import styled from 'styled-components'
 
+const MasterWrapper = styled.div`
+	background: ${({ theme }) => theme.colors.backgrounds.master};
+	padding: ${({ theme }) => theme.gridUnit * 5}px;
+	height: 100vh;
+`
+
 const Container = styled.div`
 	border-radius: ${({ theme }) => theme.borderRadius}px;
 	background: ${({ theme }) => theme.colors.backgrounds.container};
@@ -42,13 +48,15 @@ const MaxSalaries = styled.div`
 
 export const App = () => {
 	return (
-		<Container>
-			<Applications />
-			<BadCompanies>BadCompanies</BadCompanies>
-			<Results>Results</Results>
-			<Timeline>Timeline</Timeline>
-			<MinSalaries>MinSalaries</MinSalaries>
-			<MaxSalaries>MaxSalaries</MaxSalaries>
-		</Container>
+		<MasterWrapper>
+			<Container>
+				<Applications />
+				<BadCompanies>BadCompanies</BadCompanies>
+				<Results>Results</Results>
+				<Timeline>Timeline</Timeline>
+				<MinSalaries>MinSalaries</MinSalaries>
+				<MaxSalaries>MaxSalaries</MaxSalaries>
+			</Container>
+		</MasterWrapper>
 	)
 }

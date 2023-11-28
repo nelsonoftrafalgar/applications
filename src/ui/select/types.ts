@@ -16,3 +16,8 @@ export interface SelectOptionProps {
 	children: string
 	value: string
 }
+
+export interface SelectTriggerProps {
+	$open: boolean
+	$error?: boolean
+}
