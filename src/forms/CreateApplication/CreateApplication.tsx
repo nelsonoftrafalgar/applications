@@ -8,6 +8,7 @@ import { FormDatePicker } from '../fields/FormDatePicker'
 import { FormInput } from '../fields/FormInput'
 import { FormSelect } from '../fields/FormSelect'
 import { getApplicationSchema } from '../validation'
+import { useCreateApplicationMutation } from '../../store/applications'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
@@ -22,8 +23,11 @@ export const CreateApplication: FC<CreateApplicationProps> = ({
 		resolver: yupResolver(getApplicationSchema())
 	})
 
+	const [createApplication] = useCreateApplicationMutation()
+
 	const onSubmit = async (data: CreateApplicationFormData) => {
-		console.log(data)
+		await createApplication(data)
+		handleModalClose()
 	}
 
 	return (

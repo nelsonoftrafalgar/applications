@@ -1,4 +1,5 @@
 import { Application } from './types'
+import { CreateApplicationFormData } from '../forms/CreateApplication/types'
 import { api } from './api'
 
 const applicationsApi = api.injectEndpoints({
@@ -9,8 +10,19 @@ const applicationsApi = api.injectEndpoints({
 				method: 'GET'
 			}),
 			providesTags: ['Applications']
+		}),
+		createApplication: builder.mutation<Application, CreateApplicationFormData>({
+			query: (body) => {
+				return {
+					url: 'applications',
+					method: 'POST',
+					body
+				}
+			},
+			invalidatesTags: ['Applications']
 		})
 	})
 })
 
-export const { useGetApplicationsQuery } = applicationsApi
+export const { useGetApplicationsQuery, useCreateApplicationMutation } =
+	applicationsApi
