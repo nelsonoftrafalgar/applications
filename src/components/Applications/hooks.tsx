@@ -6,7 +6,7 @@ import {
 } from '@tanstack/react-table'
 
 import { getApplicationTableColumns } from './utils'
-import { useGetApplicationsQuery } from '../../store/applications'
+import { useGetApplicationsQuery } from '../../store/applications/applications'
 
 export const useApplications = () => {
 	const [search, setSearch] = useState('')

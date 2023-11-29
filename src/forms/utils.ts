@@ -1,6 +1,6 @@
 export const generateSalaryOptions = () =>
 	Array.from({ length: 50 }).map((_, index) => ({
-		value: `${index.toString()} k`,
+		value: index.toString(),
 		label: `${index.toString()} k`
 	}))
 

@@ -7,7 +7,7 @@ export const CreateApplicationModal = () => {
 	const [open, setOpen] = useState(false)
 
 	const handleModalClose = () => setOpen(false)
-	const handleModaleOpen = () => setOpen(true)
+	const handleModalOpen = () => setOpen(true)
 	return (
 		<Modal
 			open={open}
@@ -16,7 +16,7 @@ export const CreateApplicationModal = () => {
 			content={<CreateApplication handleModalClose={handleModalClose} />}
 		>
 			<span>
-				<Button onClick={handleModaleOpen} buttonStyle='navy'>
+				<Button onClick={handleModalOpen} buttonStyle='navy'>
 					New Application
 				</Button>
 			</span>

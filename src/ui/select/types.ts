@@ -1,7 +1,7 @@
 export interface SelectProps {
 	placeholder: string
 	value?: string
-	onChange: (value: string) => void
+	onChange: (value: string | number) => void
 	options: SelectOption[]
 	label?: string
 	errorMessage?: string

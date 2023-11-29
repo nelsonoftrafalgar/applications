@@ -14,3 +14,7 @@ export interface Application {
 	status: StatusType
 	applied: string
 }
+
+export type EditApplicationParams = Application
+export type CreateApplicationParams = Omit<Application, 'id'>
+export type DeleteApplicationParams = Pick<Application, 'id'>

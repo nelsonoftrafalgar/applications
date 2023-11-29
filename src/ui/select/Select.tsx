@@ -27,12 +27,17 @@ export const Select: FC<SelectProps> = ({
 
 	const handleSelectReset = () => onChange('')
 
+	const handleSelect = (value: string) => {
+		if (isNaN(Number(value))) onChange(value)
+		else onChange(Number(value))
+	}
+
 	return (
 		<SelectWrapper>
 			<StyledLabel htmlFor={label}>{label}</StyledLabel>
 			<Component.Root
-				value={value}
-				onValueChange={onChange}
+				value={value?.toString()}
+				onValueChange={handleSelect}
 				onOpenChange={setOpen}
 			>
 				<SelectTrigger $error={!!errorMessage} $open={open}>

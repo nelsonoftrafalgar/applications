@@ -1,10 +1,13 @@
-import { ApplicationMenuStyled, MenuItem } from './styles'
+import { Application } from '../../store/applications/types'
+import { ApplicationMenuStyled } from './styles'
+import { DeleteApplicationModal } from '../../modals/DeleteApplicationModal'
+import { EditApplicationModal } from '../../modals/EditApplicationModal'
 
-export const ApplicationMenu = () => {
+export const ApplicationMenu = (props: Application) => {
 	return (
 		<ApplicationMenuStyled>
-			<MenuItem>Edit</MenuItem>
-			<MenuItem>Delete</MenuItem>
+			<EditApplicationModal {...props} />
+			<DeleteApplicationModal id={props.id} />
 		</ApplicationMenuStyled>
 	)
 }

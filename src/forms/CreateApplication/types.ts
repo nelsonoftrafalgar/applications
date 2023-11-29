@@ -1,9 +1,11 @@
+import { StatusType } from '../../store/applications/types'
+
 export interface CreateApplicationFormData {
 	company: string
-	min_salary: string
-	max_salary: string
+	min_salary: number
+	max_salary: number
 	applied: string
-	status: string
+	status: StatusType
 }
 
 export interface CreateApplicationProps {

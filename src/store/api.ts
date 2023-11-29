@@ -4,7 +4,7 @@ const baseQuery = fetchBaseQuery({
 	baseUrl: 'http://localhost:3000'
 })
 
-const baseQueryWithRetry = retry(baseQuery, { maxRetries: 6 })
+const baseQueryWithRetry = retry(baseQuery, { maxRetries: 3 })
 
 export const api = createApi({
 	baseQuery: baseQueryWithRetry,

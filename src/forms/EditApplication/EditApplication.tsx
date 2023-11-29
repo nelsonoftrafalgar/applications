@@ -1,4 +1,4 @@
-import { CreateApplicationFormData, CreateApplicationProps } from './types'
+import { EditApplicationFormData, EditApplicationProps } from './types'
 import { Form, FormButtons, FormInputGroup } from '../../ui/form/styles'
 import { Resolver, useForm } from 'react-hook-form'
 import { generateSalaryOptions, statusOptions } from '../utils'
@@ -9,26 +9,31 @@ import { FormDatePicker } from '../fields/FormDatePicker'
 import { FormInput } from '../fields/FormInput'
 import { FormSelect } from '../fields/FormSelect'
 import { applicationSchema } from '../validation'
-import { useCreateApplicationMutation } from '../../store/applications/applications'
+import { useEditApplicationMutation } from '../../store/applications/applications'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-export const CreateApplication: FC<CreateApplicationProps> = ({
-	handleModalClose
+export const EditApplication: FC<EditApplicationProps> = ({
+	handleModalClose,
+	company,
+	applied,
+	max_salary,
+	min_salary,
+	status,
+	id
 }) => {
 	const {
 		formState: { isSubmitting },
 		control,
 		handleSubmit
-	} = useForm<CreateApplicationFormData>({
-		resolver: yupResolver(
-			applicationSchema
-		) as Resolver<CreateApplicationFormData>
+	} = useForm<EditApplicationFormData>({
+		resolver: yupResolver(applicationSchema) as Resolver<EditApplicationFormData>,
+		defaultValues: { company, applied, max_salary, min_salary, status }
 	})
 
-	const [createApplication] = useCreateApplicationMutation()
+	const [editApplication] = useEditApplicationMutation()
 
-	const onSubmit = async (data: CreateApplicationFormData) => {
-		await createApplication(data)
+	const onSubmit = async (data: EditApplicationFormData) => {
+		await editApplication({ id, ...data })
 		handleModalClose()
 	}
 
@@ -71,8 +76,8 @@ export const CreateApplication: FC<CreateApplicationProps> = ({
 				<Button onClick={handleModalClose} buttonStyle='navy'>
 					Cancel
 				</Button>
-				<Button disabled={isSubmitting} buttonStyle='green'>
-					Add
+				<Button disabled={isSubmitting} buttonStyle='orange'>
+					Save
 				</Button>
 			</FormButtons>
 		</Form>

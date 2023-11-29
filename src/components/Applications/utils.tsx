@@ -1,4 +1,4 @@
-import { Application } from '../../store/types'
+import { Application } from '../../store/applications/types'
 import { ApplicationMenu } from '../ApplicationMenu/ApplicationMenu'
 import { ApplicationMenuIcon } from '../ApplicationMenu/styles'
 import { Cell } from './styles'
@@ -17,12 +17,12 @@ export const getApplicationTableColumns = () => {
 		}),
 		columnHelper.accessor((row) => row.min_salary, {
 			id: 'min_salary',
-			cell: (info) => <Cell>{info.getValue()}</Cell>,
+			cell: (info) => <Cell>{info.getValue()} k</Cell>,
 			header: () => <span>Min salary</span>
 		}),
 		columnHelper.accessor((row) => row.max_salary, {
 			id: 'max_salary',
-			cell: (info) => <Cell>{info.getValue()}</Cell>,
+			cell: (info) => <Cell>{info.getValue()} k</Cell>,
 			header: () => <span>Max salary</span>
 		}),
 		columnHelper.accessor((row) => row.status, {
@@ -37,11 +37,13 @@ export const getApplicationTableColumns = () => {
 		}),
 		columnHelper.display({
 			id: 'menu',
-			cell: () => (
-				<Popover content={<ApplicationMenu />}>
-					<ApplicationMenuIcon />
-				</Popover>
-			)
+			cell: ({ row }) => {
+				return (
+					<Popover content={<ApplicationMenu {...row.original} />}>
+						<ApplicationMenuIcon />
+					</Popover>
+				)
+			}
 		})
 	]
 }
