@@ -136,5 +136,47 @@
       "status": "no answer",
       "applied": "2004-04-15"
     }
+  ],
+  "bad_companies": [
+    {
+      "id": "23e68005-9ab6-45b5-a783-4c09647aa830",
+      "bad_company": "Infinite Venturess"
+    },
+    {
+      "id": "ea1630f2-f251-44f9-a032-2fc8faa23869",
+      "bad_company": "ABC Inc."
+    },
+    {
+      "id": "7ef76873-83ba-43e5-9ced-7fa2a5c10e85",
+      "bad_company": "Gamma Enterprises"
+    },
+    {
+      "id": "01f572f2-3d16-46f8-9e16-e4f04daf004a",
+      "bad_company": "Beta Technologies"
+    },
+    {
+      "id": "489f15c3-9654-4d42-993e-c1c549009456",
+      "bad_company": "Tech Innovators LLC"
+    },
+    {
+      "id": "fa15c96d-93b2-4aa5-a31a-b6f815d17c44",
+      "bad_company": "Digital Dynamics"
+    },
+    {
+      "id": "21e7358b-a04a-4714-a982-71d3f940a00a",
+      "bad_company": "Alpha Systems"
+    },
+    {
+      "id": "73d2bdbb-dcd2-40b6-bc36-3c8f28b18bc1",
+      "bad_company": "Mega Enterprises"
+    },
+    {
+      "id": "b5dd4480-7673-4953-aa32-aa8c1a66debe",
+      "bad_company": "XYZ Corporation"
+    },
+    {
+      "id": "15f2f5d9-13e7-48f8-8891-58bf794c0aa4",
+      "bad_company": "Global Solutions Ltd."
+    }
   ]
 }

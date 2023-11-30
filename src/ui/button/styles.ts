@@ -16,6 +16,7 @@ export const StyledButton = styled(Button)<StyledButtonProps>`
 	font-size: ${({ theme }) => theme.fonts.size.xs}px;
 	color: ${({ theme }) => theme.colors.fonts.white};
 	border-radius: ${({ theme }) => theme.borderRadius}px;
+	white-space: nowrap;
 	cursor: pointer;
 	&:hover:not(:disabled) {
 		opacity: 0.7;

@@ -9,14 +9,14 @@ export const DeleteApplication = ({
 }: DeleteApplicationProps) => {
 	const [deleteApplication] = useDeleteApplicationMutation()
 
-	const handleDelteApplications = () => deleteApplication(id)
+	const handleDelteApplication = () => deleteApplication(id)
 
 	return (
 		<ButtonWrapper>
 			<Button onClick={handleModalClose} buttonStyle='navy'>
 				Cancel
 			</Button>
-			<Button onClick={handleDelteApplications} buttonStyle='red'>
+			<Button onClick={handleDelteApplication} buttonStyle='red'>
 				Delete
 			</Button>
 		</ButtonWrapper>

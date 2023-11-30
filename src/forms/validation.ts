@@ -16,3 +16,16 @@ export const applicationSchema = yup
 		status: yup.string().required('This field is required')
 	})
 	.required()
+
+export const badCompanySchema = yup
+	.object({
+		bad_company: yup
+			.string()
+			.max(250)
+			.matches(/^[A-Za-z0-9-\s]+$/, {
+				excludeEmptyString: true,
+				message: 'Invalid characters'
+			})
+			.required('This field is required')
+	})
+	.required()
