@@ -1,7 +1,7 @@
 import { Button } from '../../ui/button/Button'
 import { ButtonWrapper } from './styles'
 import { DeleteBadCompanyProps } from './types'
-import { useDeleteBadComapnyMutation } from '../../store/badCompanies/bandCompanies'
+import { useDeleteBadComapnyMutation } from '../../store/badCompanies/badCompanies'
 
 export const DeleteBadCompany = ({
 	id,

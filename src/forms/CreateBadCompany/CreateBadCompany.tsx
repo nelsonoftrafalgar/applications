@@ -6,7 +6,7 @@ import { Button } from '../../ui/button/Button'
 import { FC } from 'react'
 import { FormInput } from '../fields/FormInput'
 import { badCompanySchema } from '../validation'
-import { useCreateBadComapnyMutation } from '../../store/badCompanies/bandCompanies'
+import { useCreateBadComapnyMutation } from '../../store/badCompanies/badCompanies'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 export const CreateBadCompany: FC<CreateBadCompanyProps> = ({

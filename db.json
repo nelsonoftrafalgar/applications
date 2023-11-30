@@ -3,9 +3,9 @@
     {
       "id": "d2cd33ff-befc-4485-b79f-167c8269deb9",
       "company": "test company 2",
-      "min_salary": 22,
+      "min_salary": 15,
       "max_salary": 33,
-      "status": "not interested",
+      "status": "bad agreement",
       "applied": "2023-11-20"
     },
     {
