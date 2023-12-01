@@ -33,28 +33,12 @@
       "applied": "2003-03-20"
     },
     {
-      "id": "8c264ecf-898f-4993-820d-9f866be38948",
-      "company": "sample company 6",
-      "min_salary": 25,
-      "max_salary": 35,
-      "status": "failed interview",
-      "applied": "2003-04-05"
-    },
-    {
       "id": "6910c63b-825e-4f48-9af5-6c5e44de2552",
       "company": "test company 7",
       "min_salary": 28,
       "max_salary": 38,
       "status": "not interested",
       "applied": "2003-05-10"
-    },
-    {
-      "id": "d5db8faa-48c5-460c-b0a8-9f97fd1830ae",
-      "company": "example company 8",
-      "min_salary": 30,
-      "max_salary": 40,
-      "status": "failed interview",
-      "applied": "2003-06-15"
     },
     {
       "id": "7edd1038-ef8d-4926-bcdc-e32f5536c37b",
@@ -135,6 +119,30 @@
       "max_salary": 65,
       "status": "no answer",
       "applied": "2004-04-15"
+    },
+    {
+      "company": "sdassd",
+      "min_salary": 2,
+      "max_salary": 4,
+      "status": "failed interview",
+      "applied": "2023-12-10",
+      "id": "dmTlVS8"
+    },
+    {
+      "company": "jkhgfh",
+      "min_salary": 3,
+      "max_salary": 4,
+      "status": "failed interview",
+      "applied": "2023-12-12",
+      "id": "xVApQZ5"
+    },
+    {
+      "company": "ewrdewre",
+      "min_salary": 4,
+      "max_salary": 5,
+      "status": "hire",
+      "applied": "2023-12-18",
+      "id": "MFaO-r5"
     }
   ],
   "bad_companies": [
