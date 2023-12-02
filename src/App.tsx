@@ -1,5 +1,7 @@
 import { Applications } from './components/Applications/Applications'
 import { BadCompanies } from './components/BadCompanies/BadCompanies'
+import { MaxSalary } from './components/MaxSalary/MaxSalary'
+import { MinSalary } from './components/MinSalary/MinSalary'
 import { Status } from './components/Status/Status'
 import styled from 'styled-components'
 
@@ -22,16 +24,6 @@ const Container = styled.div`
 	grid-row-gap: 30px;
 `
 
-const Timeline = styled.div`
-	grid-area: 2 / 1 / 3 / 5;
-	background: ${({ theme }) => theme.colors.backgrounds.master};
-	border-radius: ${({ theme }) => theme.borderRadius}px;
-`
-const MinSalaries = styled.div`
-	grid-area: 2 / 5 / 3 / 9;
-	background: ${({ theme }) => theme.colors.backgrounds.master};
-	border-radius: ${({ theme }) => theme.borderRadius}px;
-`
 const MaxSalaries = styled.div`
 	grid-area: 2 / 9 / 3 / 13;
 	background: ${({ theme }) => theme.colors.backgrounds.master};
@@ -45,8 +37,8 @@ export const App = () => {
 				<Applications />
 				<BadCompanies />
 				<Status />
-				<Timeline>Timeline</Timeline>
-				<MinSalaries>MinSalaries</MinSalaries>
+				<MinSalary />
+				<MaxSalary />
 				<MaxSalaries>MaxSalaries</MaxSalaries>
 			</Container>
 		</MasterWrapper>

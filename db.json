@@ -107,22 +107,22 @@
     {
       "id": "008dc0e0-69f7-4b2a-8ee8-86144e470e05",
       "company": "example company 17",
-      "min_salary": 52,
-      "max_salary": 62,
+      "min_salary": 40,
+      "max_salary": 47,
       "status": "bad agreement",
       "applied": "2004-03-10"
     },
     {
       "id": "57e6b442-4aaa-4aa6-82ac-edd2273e793c",
       "company": "sample company 18",
-      "min_salary": 55,
-      "max_salary": 65,
+      "min_salary": 40,
+      "max_salary": 49,
       "status": "no answer",
       "applied": "2004-04-15"
     },
     {
       "company": "sdassd",
-      "min_salary": 2,
+      "min_salary": 3,
       "max_salary": 4,
       "status": "failed interview",
       "applied": "2023-12-10",
@@ -138,7 +138,7 @@
     },
     {
       "company": "ewrdewre",
-      "min_salary": 4,
+      "min_salary": 3,
       "max_salary": 5,
       "status": "hire",
       "applied": "2023-12-18",
