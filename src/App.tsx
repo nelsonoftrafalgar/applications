@@ -3,6 +3,7 @@ import { BadCompanies } from './components/BadCompanies/BadCompanies'
 import { MaxSalary } from './components/MaxSalary/MaxSalary'
 import { MinSalary } from './components/MinSalary/MinSalary'
 import { Status } from './components/Status/Status'
+import { TimeLine } from './components/Timeline/TimeLine'
 import styled from 'styled-components'
 
 const MasterWrapper = styled.div`
@@ -24,12 +25,6 @@ const Container = styled.div`
 	grid-row-gap: 30px;
 `
 
-const MaxSalaries = styled.div`
-	grid-area: 2 / 9 / 3 / 13;
-	background: ${({ theme }) => theme.colors.backgrounds.master};
-	border-radius: ${({ theme }) => theme.borderRadius}px;
-`
-
 export const App = () => {
 	return (
 		<MasterWrapper>
@@ -39,7 +34,7 @@ export const App = () => {
 				<Status />
 				<MinSalary />
 				<MaxSalary />
-				<MaxSalaries>MaxSalaries</MaxSalaries>
+				<TimeLine />
 			</Container>
 		</MasterWrapper>
 	)

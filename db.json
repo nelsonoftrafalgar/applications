@@ -6,7 +6,7 @@
       "min_salary": 15,
       "max_salary": 33,
       "status": "bad agreement",
-      "applied": "2023-11-20"
+      "applied": "2023-11-19"
     },
     {
       "id": "c74b1245-4ec5-4c87-a171-251c896fcc4f",
@@ -14,7 +14,7 @@
       "min_salary": 12,
       "max_salary": 23,
       "status": "not interested",
-      "applied": "2002-11-11"
+      "applied": "2018-11-11"
     },
     {
       "id": "aa1706b0-4d79-4e1c-9a18-37697cb60ecf",
@@ -22,7 +22,7 @@
       "min_salary": 20,
       "max_salary": 30,
       "status": "not interested",
-      "applied": "2003-02-14"
+      "applied": "2019-02-14"
     },
     {
       "id": "aa8da56f-9c58-41b8-8cac-363872133488",
@@ -30,7 +30,7 @@
       "min_salary": 22,
       "max_salary": 32,
       "status": "no answer",
-      "applied": "2003-03-20"
+      "applied": "2020-03-20"
     },
     {
       "id": "6910c63b-825e-4f48-9af5-6c5e44de2552",
@@ -38,7 +38,7 @@
       "min_salary": 28,
       "max_salary": 38,
       "status": "not interested",
-      "applied": "2003-05-10"
+      "applied": "2023-05-10"
     },
     {
       "id": "7edd1038-ef8d-4926-bcdc-e32f5536c37b",
@@ -46,7 +46,7 @@
       "min_salary": 32,
       "max_salary": 42,
       "status": "bad agreement",
-      "applied": "2003-07-20"
+      "applied": "2023-07-20"
     },
     {
       "id": "b18129f2-d6a6-4831-a8a1-bd4cc77e0d7d",
@@ -54,7 +54,7 @@
       "min_salary": 35,
       "max_salary": 45,
       "status": "not interested",
-      "applied": "2003-08-25"
+      "applied": "2023-08-25"
     },
     {
       "id": "66e5f205-2966-4701-b1c4-89750b56c3ea",
@@ -62,7 +62,7 @@
       "min_salary": 38,
       "max_salary": 48,
       "status": "bad agreement",
-      "applied": "2003-09-30"
+      "applied": "2019-09-30"
     },
     {
       "id": "a9a52449-1f88-4759-a2e3-a0d6fd6ea744",
@@ -70,7 +70,7 @@
       "min_salary": 40,
       "max_salary": 50,
       "status": "bad agreement",
-      "applied": "2003-10-05"
+      "applied": "2018-10-05"
     },
     {
       "id": "61567bed-86f7-4da3-85cf-44f8a95dc27a",
@@ -78,7 +78,7 @@
       "min_salary": 42,
       "max_salary": 52,
       "status": "not interested",
-      "applied": "2003-11-10"
+      "applied": "2021-11-10"
     },
     {
       "id": "93c7aa4a-b529-4090-b6d0-d61a8a0dc4ee",
@@ -86,7 +86,7 @@
       "min_salary": 45,
       "max_salary": 55,
       "status": "no answer",
-      "applied": "2003-12-15"
+      "applied": "2021-12-15"
     },
     {
       "id": "dae7af06-a42e-4e06-998e-2753e7962012",
@@ -94,7 +94,7 @@
       "min_salary": 48,
       "max_salary": 58,
       "status": "no answer",
-      "applied": "2004-01-20"
+      "applied": "2021-01-20"
     },
     {
       "id": "289837fe-bb52-4973-85ca-002e3fa0dd3a",
@@ -102,7 +102,7 @@
       "min_salary": 50,
       "max_salary": 60,
       "status": "not interested",
-      "applied": "2004-02-25"
+      "applied": "2022-02-25"
     },
     {
       "id": "008dc0e0-69f7-4b2a-8ee8-86144e470e05",
@@ -110,7 +110,7 @@
       "min_salary": 40,
       "max_salary": 47,
       "status": "bad agreement",
-      "applied": "2004-03-10"
+      "applied": "2022-03-10"
     },
     {
       "id": "57e6b442-4aaa-4aa6-82ac-edd2273e793c",
@@ -118,14 +118,14 @@
       "min_salary": 40,
       "max_salary": 49,
       "status": "no answer",
-      "applied": "2004-04-15"
+      "applied": "2022-04-15"
     },
     {
       "company": "sdassd",
       "min_salary": 3,
       "max_salary": 4,
       "status": "failed interview",
-      "applied": "2023-12-10",
+      "applied": "2023-11-12",
       "id": "dmTlVS8"
     },
     {
@@ -133,7 +133,7 @@
       "min_salary": 3,
       "max_salary": 4,
       "status": "failed interview",
-      "applied": "2023-12-12",
+      "applied": "2023-11-12",
       "id": "xVApQZ5"
     },
     {
@@ -141,7 +141,7 @@
       "min_salary": 3,
       "max_salary": 5,
       "status": "hire",
-      "applied": "2023-12-18",
+      "applied": "2023-11-18",
       "id": "MFaO-r5"
     }
   ],

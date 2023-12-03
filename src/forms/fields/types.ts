@@ -14,11 +14,6 @@ export interface FormDatePickerProps<T extends FieldValues> {
 	control: Control<T>
 }
 
-export interface FormRangePickerProps<T extends FieldValues> {
-	name: Path<T>
-	control: Control<T>
-}
-
 export interface FormSelectProps<T extends FieldValues> {
 	name: Path<T>
 	placeholder: string
