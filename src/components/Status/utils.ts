@@ -1,4 +1,7 @@
-import { Application } from '../../store/applications/types'
+import { Application, StatusType } from '../../store/applications/types'
+
+import { StatusChartDataItem } from './types'
+import { theme } from '../../styles/theme'
 
 export const applicationsGroupBy = (
 	array: Application[] = [],
@@ -21,3 +24,17 @@ export const convertToPieChartData = (groupedByData: Record<string, number>) =>
 		value: groupedByData[key],
 		name: key
 	}))
+
+const { orange, navy, blue, violet, red, green } = theme.colors.primary
+
+const colorMap: Record<StatusType, string> = {
+	'not interested': orange,
+	'no answer': blue,
+	hire: violet,
+	'bad agreement': navy,
+	'failed interview': red,
+	'successful interview': green
+}
+
+export const getDataColors = (data: StatusChartDataItem[]) =>
+	data.map((status) => colorMap[status.name])

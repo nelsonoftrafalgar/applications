@@ -18,8 +18,8 @@ export const statusOptions = [
 		label: 'failed interview'
 	},
 	{
-		value: 'successfull interview',
-		label: 'successfull interview'
+		value: 'successful interview',
+		label: 'successful interview'
 	},
 	{
 		value: 'bad agreement',

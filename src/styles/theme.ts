@@ -28,7 +28,7 @@ export const theme = {
 			notInterested: '#FFF0D3',
 			badAgreement: '#FFD3D3',
 			failedInterview: '#D4D4D4',
-			successfullInterview: '#D2FFD4',
+			successfulInterview: '#D2FFD4',
 			hire: '#F1D2FF'
 		}
 	},

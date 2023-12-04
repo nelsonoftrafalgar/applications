@@ -111,6 +111,14 @@
       "status": "hire",
       "applied": "2023-11-18",
       "id": "MFaO-r5"
+    },
+    {
+      "company": "good company",
+      "min_salary": 4,
+      "max_salary": 5,
+      "status": "successful interview",
+      "applied": "2023-11-27",
+      "id": "2wjTSU3"
     }
   ],
   "bad_companies": [

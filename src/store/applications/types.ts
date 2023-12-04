@@ -3,7 +3,7 @@ export type StatusType =
 	| 'not interested'
 	| 'bad agreement'
 	| 'failed interview'
-	| 'successfull interview'
+	| 'successful interview'
 	| 'hire'
 
 export interface Application {

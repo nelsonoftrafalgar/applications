@@ -2,14 +2,15 @@ import { StyledProps } from './types'
 import styled from 'styled-components'
 
 export const StatusStyled = styled.span<StyledProps>`
-	padding: 4px 8px;
+	padding-inline: ${({ theme }) => theme.gridUnit * 2}px;
+	padding-block: ${({ theme }) => theme.gridUnit}px;
 	color: ${({ theme, $status }) => {
 		switch ($status) {
 			case 'not interested':
 				return theme.colors.primary.orange
 			case 'no answer':
 				return theme.colors.primary.blue
-			case 'successfull interview':
+			case 'successful interview':
 				return theme.colors.primary.green
 			case 'bad agreement':
 				return theme.colors.primary.red
@@ -30,8 +31,8 @@ export const StatusStyled = styled.span<StyledProps>`
 				return theme.colors.statusBg.notInterested
 			case 'no answer':
 				return theme.colors.statusBg.noAnswer
-			case 'successfull interview':
-				return theme.colors.statusBg.successfullInterview
+			case 'successful interview':
+				return theme.colors.statusBg.successfulInterview
 			case 'bad agreement':
 				return theme.colors.statusBg.badAgreement
 			case 'failed interview':

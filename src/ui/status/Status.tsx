@@ -16,7 +16,7 @@ const Status = ({ status }: Props) => {
 			{status === 'not interested' && <CircleBackslashIcon />}
 			{status === 'failed interview' && <CrossCircledIcon />}
 			{status === 'no answer' && <ClockIcon />}
-			{status === 'successfull interview' && <CheckCircledIcon />}
+			{status === 'successful interview' && <CheckCircledIcon />}
 			{status === 'bad agreement' && <ExclamationTriangleIcon />}
 			{status === 'hire' && <StarIcon />}
 			{status}

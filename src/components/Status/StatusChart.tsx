@@ -4,22 +4,20 @@ import { useEffect, useRef } from 'react'
 
 import { ChartContainer } from './styles'
 import { StatusChartProps } from './types'
-import { useTheme } from 'styled-components'
+import { getDataColors } from './utils'
 
 export const StatusChart = ({ data }: StatusChartProps) => {
 	const chartRef = useRef(null)
-	const theme = useTheme()
 
 	useEffect(() => {
 		const chart = echarts.init(chartRef.current)
-		const { orange, navy, blue, violet, red, green } = theme.colors.primary
 
 		const options = {
 			tooltip: {
 				trigger: 'item',
 				formatter: '{b} : {c} ({d}%)'
 			},
-			color: [green, violet, orange, navy, red, blue],
+			color: getDataColors(data),
 			series: [
 				{
 					type: 'pie',
@@ -42,7 +40,7 @@ export const StatusChart = ({ data }: StatusChartProps) => {
 		return () => {
 			chart.dispose()
 		}
-	}, [data, theme.colors.primary])
+	}, [data])
 
 	return <ChartContainer ref={chartRef} />
 }
