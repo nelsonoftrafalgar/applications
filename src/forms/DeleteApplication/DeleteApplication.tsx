@@ -5,15 +5,18 @@ import { useDeleteApplicationMutation } from '../../store/applications/applicati
 
 export const DeleteApplication = ({
 	id,
-	handleModalClose
+	handleModalOpenState
 }: DeleteApplicationProps) => {
 	const [deleteApplication] = useDeleteApplicationMutation()
 
-	const handleDelteApplication = () => deleteApplication(id)
+	const handleDelteApplication = () => {
+		deleteApplication(id)
+		handleModalOpenState(false)
+	}
 
 	return (
 		<ButtonWrapper>
-			<Button onClick={handleModalClose} buttonStyle='navy'>
+			<Button onClick={() => handleModalOpenState(false)} buttonStyle='navy'>
 				Cancel
 			</Button>
 			<Button onClick={handleDelteApplication} buttonStyle='red'>

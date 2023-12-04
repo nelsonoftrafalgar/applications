@@ -1,4 +1,4 @@
 export interface DeleteApplicationProps {
-	handleModalClose: () => void
+	handleModalOpenState: (open: boolean) => void
 	id: string
 }

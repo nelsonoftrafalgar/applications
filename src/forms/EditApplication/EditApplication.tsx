@@ -13,7 +13,7 @@ import { useEditApplicationMutation } from '../../store/applications/application
 import { yupResolver } from '@hookform/resolvers/yup'
 
 export const EditApplication: FC<EditApplicationProps> = ({
-	handleModalClose,
+	handleModalOpenState,
 	company,
 	applied,
 	max_salary,
@@ -34,7 +34,7 @@ export const EditApplication: FC<EditApplicationProps> = ({
 
 	const onSubmit = async (data: EditApplicationFormData) => {
 		await editApplication({ id, ...data })
-		handleModalClose()
+		handleModalOpenState(false)
 	}
 
 	return (
@@ -73,7 +73,7 @@ export const EditApplication: FC<EditApplicationProps> = ({
 				<FormDatePicker name='applied' control={control} />
 			</FormInputGroup>
 			<FormButtons>
-				<Button onClick={handleModalClose} buttonStyle='navy'>
+				<Button onClick={() => handleModalOpenState(false)} buttonStyle='navy'>
 					Cancel
 				</Button>
 				<Button disabled={isSubmitting} buttonStyle='orange'>

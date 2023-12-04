@@ -1,38 +1,6 @@
 {
   "applications": [
     {
-      "id": "d2cd33ff-befc-4485-b79f-167c8269deb9",
-      "company": "test company 2",
-      "min_salary": 15,
-      "max_salary": 33,
-      "status": "bad agreement",
-      "applied": "2023-11-19"
-    },
-    {
-      "id": "c74b1245-4ec5-4c87-a171-251c896fcc4f",
-      "company": "test company 1",
-      "min_salary": 12,
-      "max_salary": 23,
-      "status": "not interested",
-      "applied": "2018-11-11"
-    },
-    {
-      "id": "aa1706b0-4d79-4e1c-9a18-37697cb60ecf",
-      "company": "test company 4",
-      "min_salary": 20,
-      "max_salary": 30,
-      "status": "not interested",
-      "applied": "2019-02-14"
-    },
-    {
-      "id": "aa8da56f-9c58-41b8-8cac-363872133488",
-      "company": "example company 5",
-      "min_salary": 22,
-      "max_salary": 32,
-      "status": "no answer",
-      "applied": "2020-03-20"
-    },
-    {
       "id": "6910c63b-825e-4f48-9af5-6c5e44de2552",
       "company": "test company 7",
       "min_salary": 28,

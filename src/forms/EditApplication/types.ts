@@ -9,5 +9,5 @@ export interface EditApplicationFormData {
 }
 
 export interface EditApplicationProps extends Application {
-	handleModalClose: () => void
+	handleModalOpenState: (open: boolean) => void
 }

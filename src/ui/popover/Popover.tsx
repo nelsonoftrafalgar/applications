@@ -1,21 +1,23 @@
 import * as Component from '@radix-ui/react-popover'
 
+import { PopoverContex } from './context'
 import { PopoverTriggerStyled } from './styles'
-import { ReactNode } from 'react'
+import { Props } from './types'
+import { useState } from 'react'
 
-interface Props {
-	children: ReactNode
-	content: ReactNode
-}
-const Popover = ({ children, content }: Props) => {
+export const Popover = ({ children, content }: Props) => {
+	const [open, setOpen] = useState(false)
+
 	return (
-		<Component.Root>
+		<Component.Root open={open} onOpenChange={setOpen}>
 			<PopoverTriggerStyled>{children}</PopoverTriggerStyled>
 			<Component.Portal>
-				<Component.Content>{content}</Component.Content>
+				<Component.Content>
+					<PopoverContex.Provider value={{ setPopoverOpen: setOpen }}>
+						{content}
+					</PopoverContex.Provider>
+				</Component.Content>
 			</Component.Portal>
 		</Component.Root>
 	)
 }
-
-export default Popover

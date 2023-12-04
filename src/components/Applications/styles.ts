@@ -65,5 +65,5 @@ export const TableData = styled.td`
 export const TableWrapper = styled.div`
 	padding-inline: ${({ theme }) => theme.gridUnit * 5}px;
 	overflow: auto;
-	height: 240px;
+	height: calc(100% - 60px);
 `

@@ -4,6 +4,7 @@ export const Container = styled.div`
 	grid-area: 1 / 7 / 2 / 10;
 	background: ${({ theme }) => theme.colors.backgrounds.master};
 	border-radius: ${({ theme }) => theme.borderRadius}px;
+	overflow: auto;
 `
 export const BadCompaniesCount = styled.span`
 	margin-left: ${({ theme }) => theme.gridUnit * 2}px;
@@ -59,5 +60,5 @@ export const TableData = styled.td`
 export const TableWrapper = styled.div`
 	padding-inline: ${({ theme }) => theme.gridUnit * 5}px;
 	overflow: auto;
-	height: 206px;
+	height: calc(100% - 120px);
 `
