@@ -13,5 +13,5 @@ export const invalidateApplications = () =>
 export const optimisticDeleteApplication = (applicationId: string) =>
 	applicationsApi.util.updateQueryData('getApplications', undefined, (draft) => {
 		const index = draft.findIndex(({ id }) => id === applicationId)
-		draft.splice(index, index)
+		draft.splice(index, 1)
 	})

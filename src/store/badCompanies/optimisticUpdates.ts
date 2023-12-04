@@ -13,5 +13,5 @@ export const invalidateBadCompanies = () =>
 export const optimisticDeleteBadCompany = (badCompanyId: string) =>
 	badCompaniesApi.util.updateQueryData('getBadCompanies', undefined, (draft) => {
 		const index = draft.findIndex(({ id }) => id === badCompanyId)
-		draft.splice(index, index)
+		draft.splice(index, 1)
 	})
