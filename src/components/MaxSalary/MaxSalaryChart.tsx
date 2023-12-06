@@ -29,6 +29,7 @@ export const MaxSalaryChart = ({ data }: MaxSalaryChartProps) => {
 			},
 			yAxis: {
 				type: 'value',
+				minInterval: 1,
 				splitLine: {
 					show: true,
 					lineStyle: {

@@ -11,12 +11,15 @@ import {
 
 import { CreateApplicationModal } from '../../modals/CreateApplicationModal'
 import { Input } from '../../ui/input/Input'
+import { TableVirtuoso } from 'react-virtuoso'
 import { flexRender } from '@tanstack/react-table'
+import { forwardRef } from 'react'
 import { useApplications } from './hooks'
 
 export const Applications = () => {
 	const { table, applicationTotalCount, search, handleSearch } =
 		useApplications()
+	const { rows } = table.getRowModel()
 
 	return (
 		<Container>
@@ -33,9 +36,23 @@ export const Applications = () => {
 				<CreateApplicationModal />
 			</Header>
 			<TableWrapper>
-				<Table>
-					<thead>
-						{table.getHeaderGroups().map((headerGroup) => (
+				<TableVirtuoso
+					totalCount={rows.length}
+					components={{
+						Table: ({ style, ...props }) => {
+							return <Table {...props} />
+						},
+						TableBody: forwardRef(({ style, ...props }, ref) => (
+							<tbody {...props} ref={ref} />
+						)),
+						TableRow: (props) => {
+							return table
+								.getHeaderGroups()
+								.map((headerGroup) => <tr key={headerGroup.id} {...props} />)
+						}
+					}}
+					fixedHeaderContent={() => {
+						return table.getHeaderGroups().map((headerGroup) => (
 							<tr key={headerGroup.id}>
 								{headerGroup.headers.map((header) => (
 									<TableHeader key={header.id}>
@@ -43,20 +60,19 @@ export const Applications = () => {
 									</TableHeader>
 								))}
 							</tr>
-						))}
-					</thead>
-					<tbody>
-						{table.getRowModel().rows.map((row) => (
-							<tr key={row.id}>
-								{row.getVisibleCells().map((cell) => (
-									<TableData key={cell.id}>
-										{flexRender(cell.column.columnDef.cell, cell.getContext())}
-									</TableData>
-								))}
-							</tr>
-						))}
-					</tbody>
-				</Table>
+						))
+					}}
+					itemContent={(index) => {
+						const row = rows[index]
+						return row
+							.getVisibleCells()
+							.map((cell) => (
+								<TableData key={cell.id}>
+									{flexRender(cell.column.columnDef.cell, cell.getContext())}
+								</TableData>
+							))
+					}}
+				/>
 			</TableWrapper>
 		</Container>
 	)

@@ -36,6 +36,7 @@ export const DialogOverlay = styled(Dialog.Overlay)`
 	position: fixed;
 	inset: 0;
 	opacity: 0.7;
+	z-index: 3;
 	animation: ${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
 `
 
@@ -57,6 +58,7 @@ export const DialogContent = styled(Dialog.Content)`
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	z-index: 4;
 	animation: ${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
 
 	&:focus {

@@ -5,7 +5,7 @@
       "company": "test company 7",
       "min_salary": 28,
       "max_salary": 38,
-      "status": "not interested",
+      "status": "successful interview",
       "applied": "2023-05-10"
     },
     {
@@ -53,7 +53,7 @@
       "company": "example company 14",
       "min_salary": 45,
       "max_salary": 55,
-      "status": "no answer",
+      "status": "hire",
       "applied": "2021-12-15"
     },
     {
@@ -116,7 +116,7 @@
       "company": "good company",
       "min_salary": 4,
       "max_salary": 5,
-      "status": "successful interview",
+      "status": "hire",
       "applied": "2023-11-27",
       "id": "2wjTSU3"
     }

@@ -23,7 +23,8 @@ export const StatusStyled = styled.span<StyledProps>`
 
 	display: inline-flex;
 	align-items: center;
-	justify-content: flex-start;
+	justify-content: center;
+	width: 150px;
 	gap: ${({ theme }) => theme.gridUnit}px;
 	background-color: ${({ theme, $status }) => {
 		switch ($status) {

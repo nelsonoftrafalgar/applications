@@ -29,6 +29,7 @@ export const MinSalaryChart = ({ data }: MinSalaryChartProps) => {
 			},
 			yAxis: {
 				type: 'value',
+				minInterval: 1,
 				splitLine: {
 					show: true,
 					lineStyle: {

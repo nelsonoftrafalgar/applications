@@ -25,7 +25,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
 			<Dialog.Trigger asChild>{children}</Dialog.Trigger>
 			<Dialog.Portal>
 				<DialogOverlay />
-				<DialogContent>
+				<DialogContent onOpenAutoFocus={(e) => e.preventDefault()}>
 					<ModalHeader>
 						<DialogTitle>{title}</DialogTitle>
 					</ModalHeader>
