@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { theme } from './theme'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -14,6 +15,21 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: sans-serif;
+  }
+
+  .success-message {
+    background-color: ${theme.colors.primary.green};
+    color: ${theme.colors.fonts.white};
+  }
+
+  .error-message {
+    background-color: ${theme.colors.primary.red};
+    color: ${theme.colors.fonts.white};
+  }
+
+  .Toastify__close-button--light {
+    color: ${theme.colors.fonts.white};
+    opacity: 1;
   }
 `
 
