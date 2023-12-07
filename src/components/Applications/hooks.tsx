@@ -11,7 +11,7 @@ import { useGetApplicationsQuery } from '../../store/applications/applications'
 export const useApplications = () => {
 	const [search, setSearch] = useState('')
 
-	const { data = [] } = useGetApplicationsQuery()
+	const { data = [], isLoading } = useGetApplicationsQuery()
 	const table = useReactTable({
 		data,
 		columns: getApplicationTableColumns(),
@@ -29,5 +29,5 @@ export const useApplications = () => {
 
 	const applicationTotalCount = data.length
 
-	return { table, applicationTotalCount, search, handleSearch }
+	return { table, applicationTotalCount, search, handleSearch, isLoading }
 }

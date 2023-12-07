@@ -1,4 +1,4 @@
-import { StatusType } from '../../components/Applications/Applications'
+import { StatusType } from '../../store/applications/types'
 
 export interface StyledProps {
 	$status: StatusType

@@ -11,7 +11,7 @@ import { useGetBadCompaniesQuery } from '../../store/badCompanies/badCompanies'
 export const useBadCompanies = () => {
 	const [search, setSearch] = useState('')
 
-	const { data = [] } = useGetBadCompaniesQuery()
+	const { data = [], isLoading } = useGetBadCompaniesQuery()
 
 	const table = useReactTable({
 		data,
@@ -30,5 +30,5 @@ export const useBadCompanies = () => {
 
 	const badCompanyTotalCount = data.length
 
-	return { table, badCompanyTotalCount, search, handleSearch }
+	return { table, badCompanyTotalCount, search, handleSearch, isLoading }
 }

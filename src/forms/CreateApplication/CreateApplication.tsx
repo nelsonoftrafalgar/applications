@@ -4,6 +4,7 @@ import { Resolver, useForm } from 'react-hook-form'
 import { generateSalaryOptions, statusOptions } from '../utils'
 
 import { Button } from '../../ui/button/Button'
+import { ButtonLoader } from '../../ui/loader/ButtonLoader'
 import { FC } from 'react'
 import { FormDatePicker } from '../fields/FormDatePicker'
 import { FormInput } from '../fields/FormInput'
@@ -15,17 +16,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 export const CreateApplication: FC<CreateApplicationProps> = ({
 	handleModalClose
 }) => {
-	const {
-		formState: { isSubmitting },
-		control,
-		handleSubmit
-	} = useForm<CreateApplicationFormData>({
+	const { control, handleSubmit } = useForm<CreateApplicationFormData>({
 		resolver: yupResolver(
 			applicationSchema
 		) as Resolver<CreateApplicationFormData>
 	})
 
-	const [createApplication] = useCreateApplicationMutation()
+	const [createApplication, { isLoading }] = useCreateApplicationMutation()
 
 	const onSubmit = async (data: CreateApplicationFormData) => {
 		await createApplication(data)
@@ -71,9 +68,9 @@ export const CreateApplication: FC<CreateApplicationProps> = ({
 				<Button onClick={handleModalClose} buttonStyle='navy'>
 					Cancel
 				</Button>
-				<Button disabled={isSubmitting} buttonStyle='green'>
-					Add
-				</Button>
+				<ButtonLoader isLoading={isLoading}>
+					<Button buttonStyle='green'>Add</Button>
+				</ButtonLoader>
 			</FormButtons>
 		</Form>
 	)

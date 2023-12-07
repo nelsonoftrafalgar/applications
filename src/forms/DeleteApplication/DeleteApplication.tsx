@@ -9,7 +9,7 @@ export const DeleteApplication = ({
 }: DeleteApplicationProps) => {
 	const [deleteApplication] = useDeleteApplicationMutation()
 
-	const handleDelteApplication = () => {
+	const handleDeleteApplication = () => {
 		deleteApplication(id)
 		handleModalOpenState(false)
 	}
@@ -19,7 +19,7 @@ export const DeleteApplication = ({
 			<Button onClick={() => handleModalOpenState(false)} buttonStyle='navy'>
 				Cancel
 			</Button>
-			<Button onClick={handleDelteApplication} buttonStyle='red'>
+			<Button onClick={handleDeleteApplication} buttonStyle='red'>
 				Delete
 			</Button>
 		</ButtonWrapper>

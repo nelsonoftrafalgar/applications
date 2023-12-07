@@ -6,7 +6,7 @@ import { Button } from '../../ui/button/Button'
 import { FC } from 'react'
 import { FormInput } from '../fields/FormInput'
 import { badCompanySchema } from '../validation'
-import { useEditBadComapnyMutation } from '../../store/badCompanies/badCompanies'
+import { useEditBadCompanyMutation } from '../../store/badCompanies/badCompanies'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 export const EditBadCompany: FC<EditBadCompanyProps> = ({
@@ -23,7 +23,7 @@ export const EditBadCompany: FC<EditBadCompanyProps> = ({
 		defaultValues: { bad_company }
 	})
 
-	const [editBadCompany] = useEditBadComapnyMutation()
+	const [editBadCompany] = useEditBadCompanyMutation()
 
 	const onSubmit = async (data: EditBadCompanyFormData) => {
 		await editBadCompany({ id, ...data })

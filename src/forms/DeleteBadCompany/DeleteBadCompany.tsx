@@ -1,22 +1,22 @@
 import { Button } from '../../ui/button/Button'
 import { ButtonWrapper } from './styles'
 import { DeleteBadCompanyProps } from './types'
-import { useDeleteBadComapnyMutation } from '../../store/badCompanies/badCompanies'
+import { useDeleteBadCompanyMutation } from '../../store/badCompanies/badCompanies'
 
 export const DeleteBadCompany = ({
 	id,
 	handleModalClose
 }: DeleteBadCompanyProps) => {
-	const [deleteBadCompany] = useDeleteBadComapnyMutation()
+	const [deleteBadCompany] = useDeleteBadCompanyMutation()
 
-	const handleDelteBadCompany = () => deleteBadCompany(id)
+	const handleDeleteBadCompany = () => deleteBadCompany(id)
 
 	return (
 		<ButtonWrapper>
 			<Button onClick={handleModalClose} buttonStyle='navy'>
 				Cancel
 			</Button>
-			<Button onClick={handleDelteBadCompany} buttonStyle='red'>
+			<Button onClick={handleDeleteBadCompany} buttonStyle='red'>
 				Delete
 			</Button>
 		</ButtonWrapper>

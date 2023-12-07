@@ -19,8 +19,10 @@ export const applicationsGroupBy = (
 		return result
 	}, {})
 
-export const convertToPieChartData = (groupedByData: Record<string, number>) =>
-	Object.keys(groupedByData).map((key) => ({
+export const convertToPieChartData = (
+	groupedByData: Record<StatusType, number>
+) =>
+	(Object.keys(groupedByData) as StatusType[]).map((key) => ({
 		value: groupedByData[key],
 		name: key
 	}))

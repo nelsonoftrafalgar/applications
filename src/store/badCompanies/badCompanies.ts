@@ -18,11 +18,11 @@ export const badCompaniesApi = api.injectEndpoints({
 			query: BadCompanyQueries.getBadCompanies,
 			providesTags: ['BadCompanies']
 		}),
-		createBadComapny: builder.mutation<BadCompany, CreateBadCompanyParams>({
+		createBadCompany: builder.mutation<BadCompany, CreateBadCompanyParams>({
 			query: BadCompanyQueries.createBadCompany,
 			invalidatesTags: ['BadCompanies']
 		}),
-		editBadComapny: builder.mutation<BadCompany, EditBadCompanyParams>({
+		editBadCompany: builder.mutation<BadCompany, EditBadCompanyParams>({
 			query: BadCompanyQueries.editBadCompany,
 			async onQueryStarted(badCompany, { dispatch, queryFulfilled }) {
 				dispatch(optimisticUpdateBadCompany(badCompany))
@@ -33,7 +33,7 @@ export const badCompaniesApi = api.injectEndpoints({
 				}
 			}
 		}),
-		deleteBadComapny: builder.mutation<void, string>({
+		deleteBadCompany: builder.mutation<void, string>({
 			query: BadCompanyQueries.deleteBadCompany,
 			async onQueryStarted(badCompanyId, { dispatch, queryFulfilled }) {
 				dispatch(optimisticDeleteBadCompany(badCompanyId))
@@ -48,8 +48,8 @@ export const badCompaniesApi = api.injectEndpoints({
 })
 
 export const {
-	useCreateBadComapnyMutation,
-	useDeleteBadComapnyMutation,
+	useCreateBadCompanyMutation,
+	useDeleteBadCompanyMutation,
 	useGetBadCompaniesQuery,
-	useEditBadComapnyMutation
+	useEditBadCompanyMutation
 } = badCompaniesApi
