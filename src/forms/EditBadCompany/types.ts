@@ -1,4 +1,4 @@
-import { BadCompany } from '../../store/badCompanies/types'
+import { BadCompany } from 'store/badCompanies/types'
 
 export interface EditBadCompanyFormData {
 	bad_company: string

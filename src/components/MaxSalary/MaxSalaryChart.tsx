@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 
 import { ChartContainer } from './styles'
 import { MaxSalaryChartProps } from './types'
-import { getMaxSalaryChartOptions } from '../../charts/charts'
+import { getMaxSalaryChartOptions } from 'charts/charts'
 
 export const MaxSalaryChart = ({ data }: MaxSalaryChartProps) => {
 	const chartRef = useRef(null)

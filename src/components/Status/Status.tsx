@@ -1,9 +1,9 @@
 import { Container, Header, Title } from './styles'
 import { applicationsGroupBy, convertToPieChartData } from './utils'
 
-import { ApiLoader } from '../../ui/loader/ApiLoader'
+import { ApiLoader } from 'ui/loader/ApiLoader'
 import { StatusChart } from './StatusChart'
-import { useGetApplicationsQuery } from '../../store/applications/applications'
+import { useGetApplicationsQuery } from 'store/applications/applications'
 
 export const Status = () => {
 	const { data, isLoading } = useGetApplicationsQuery()

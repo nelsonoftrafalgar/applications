@@ -6,7 +6,7 @@ import {
 } from '@tanstack/react-table'
 
 import { getBadCompaniesTableColumns } from './utils'
-import { useGetBadCompaniesQuery } from '../../store/badCompanies/badCompanies'
+import { useGetBadCompaniesQuery } from 'store/badCompanies/badCompanies'
 
 export const useBadCompanies = () => {
 	const [search, setSearch] = useState('')

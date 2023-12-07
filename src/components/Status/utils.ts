@@ -1,7 +1,7 @@
-import { Application, StatusType } from '../../store/applications/types'
+import { Application, StatusType } from 'store/applications/types'
 
 import { StatusChartDataItem } from './types'
-import { theme } from '../../styles/theme'
+import { theme } from 'styles/theme'
 
 export const applicationsGroupBy = (
 	array: Application[] = [],

@@ -1,9 +1,9 @@
 import { Container, Header, Title } from './styles'
 
-import { ApiLoader } from '../../ui/loader/ApiLoader'
+import { ApiLoader } from 'ui/loader/ApiLoader'
 import { MinSalaryChart } from './MinSalaryChart'
-import { applicationsGroupBy } from '../Status/utils'
-import { useGetApplicationsQuery } from '../../store/applications/applications'
+import { applicationsGroupBy } from 'components/Status/utils'
+import { useGetApplicationsQuery } from 'store/applications/applications'
 
 export const MinSalary = () => {
 	const { data, isLoading } = useGetApplicationsQuery()

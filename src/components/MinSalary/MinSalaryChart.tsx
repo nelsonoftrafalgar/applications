@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 
 import { ChartContainer } from './styles'
 import { MinSalaryChartProps } from './types'
-import { getMinSalaryChartOptions } from '../../charts/charts'
+import { getMinSalaryChartOptions } from 'charts/charts'
 
 export const MinSalaryChart = ({ data }: MinSalaryChartProps) => {
 	const chartRef = useRef(null)

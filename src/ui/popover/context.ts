@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react'
 
-import { PopoverContext } from './types'
+import { IPopoverContext } from './types'
 
-export const PopoverContex = createContext({} as PopoverContext)
+export const PopoverContext = createContext({} as IPopoverContext)
 
-export const usePopoverContext = () => useContext(PopoverContex)
+export const usePopoverContext = () => useContext(PopoverContext)

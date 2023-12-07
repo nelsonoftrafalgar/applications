@@ -1,6 +1,6 @@
-import { Button } from '../ui/button/Button'
-import { CreateBadCompany } from '../forms/CreateBadCompany/CreateBadCompany'
-import { Modal } from '../ui/modal/Modal'
+import { Button } from 'ui/button/Button'
+import { CreateBadCompany } from 'forms/CreateBadCompany/CreateBadCompany'
+import { Modal } from 'ui/modal/Modal'
 import { useState } from 'react'
 
 export const CreateBadCompanyModal = () => {

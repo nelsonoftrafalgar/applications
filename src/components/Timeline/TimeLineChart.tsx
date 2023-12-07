@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 
 import { ChartContainer } from './styles'
 import { TimeLineChartProps } from './types'
-import { getTimeLineChartOptions } from '../../charts/charts'
+import { getTimeLineChartOptions } from 'charts/charts'
 
 export const TimeLineChart = ({ data }: TimeLineChartProps) => {
 	const chartRef = useRef(null)

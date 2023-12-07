@@ -1,12 +1,12 @@
 import { EditBadCompanyFormData, EditBadCompanyProps } from './types'
-import { Form, FormButtons } from '../../ui/form/styles'
+import { Form, FormButtons } from 'ui/form/styles'
 import { Resolver, useForm } from 'react-hook-form'
 
-import { Button } from '../../ui/button/Button'
+import { Button } from 'ui/button/Button'
 import { FC } from 'react'
-import { FormInput } from '../fields/FormInput'
-import { badCompanySchema } from '../validation'
-import { useEditBadCompanyMutation } from '../../store/badCompanies/badCompanies'
+import { FormInput } from 'forms/fields/FormInput'
+import { badCompanySchema } from 'forms/validation'
+import { useEditBadCompanyMutation } from 'store/badCompanies/badCompanies'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 export const EditBadCompany: FC<EditBadCompanyProps> = ({

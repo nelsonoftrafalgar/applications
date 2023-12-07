@@ -1,7 +1,7 @@
-import { BadCompany } from '../../store/badCompanies/types'
+import { BadCompany } from 'store/badCompanies/types'
 import { Cell } from './styles'
-import { DeleteBadCompanyModal } from '../../modals/DeleteBadCompanyModal'
-import { EditBadCompanyModal } from '../../modals/EditBadCompanyModal'
+import { DeleteBadCompanyModal } from 'modals/DeleteBadCompanyModal'
+import { EditBadCompanyModal } from 'modals/EditBadCompanyModal'
 import { createColumnHelper } from '@tanstack/react-table'
 
 export const getBadCompaniesTableColumns = () => {

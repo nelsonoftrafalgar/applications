@@ -1,7 +1,7 @@
-import { Button } from '../../ui/button/Button'
+import { Button } from 'ui/button/Button'
 import { ButtonWrapper } from './styles'
 import { DeleteApplicationProps } from './types'
-import { useDeleteApplicationMutation } from '../../store/applications/applications'
+import { useDeleteApplicationMutation } from 'store/applications/applications'
 
 export const DeleteApplication = ({
 	id,

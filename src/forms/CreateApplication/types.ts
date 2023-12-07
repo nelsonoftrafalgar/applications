@@ -1,4 +1,4 @@
-import { StatusType } from '../../store/applications/types'
+import { StatusType } from 'store/applications/types'
 
 export interface CreateApplicationFormData {
 	company: string

@@ -1,8 +1,8 @@
-import { Application } from '../store/applications/types'
-import { EditApplication } from '../forms/EditApplication/EditApplication'
-import { MenuItem } from '../components/ApplicationMenu/styles'
-import { Modal } from '../ui/modal/Modal'
-import { usePopoverContext } from '../ui/popover/context'
+import { Application } from 'store/applications/types'
+import { EditApplication } from 'forms/EditApplication/EditApplication'
+import { MenuItem } from 'components/ApplicationMenu/styles'
+import { Modal } from 'ui/modal/Modal'
+import { usePopoverContext } from 'ui/popover/context'
 import { useState } from 'react'
 
 export const EditApplicationModal = (props: Application) => {

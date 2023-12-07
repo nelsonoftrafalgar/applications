@@ -1,9 +1,9 @@
-import { Application } from '../../store/applications/types'
-import { ApplicationMenu } from '../ApplicationMenu/ApplicationMenu'
-import { ApplicationMenuIcon } from '../ApplicationMenu/styles'
+import { Application } from 'store/applications/types'
+import { ApplicationMenu } from 'components/ApplicationMenu/ApplicationMenu'
+import { ApplicationMenuIcon } from 'components/ApplicationMenu/styles'
 import { Cell } from './styles'
-import { Popover } from '../../ui/popover/Popover'
-import Status from '../../ui/status/Status'
+import { Popover } from 'ui/popover/Popover'
+import Status from 'ui/status/Status'
 import { createColumnHelper } from '@tanstack/react-table'
 
 export const getApplicationTableColumns = () => {

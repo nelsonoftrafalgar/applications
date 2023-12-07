@@ -1,8 +1,8 @@
-import { Application } from '../store/applications/types'
-import { DeleteApplication } from '../forms/DeleteApplication/DeleteApplication'
-import { MenuItem } from '../components/ApplicationMenu/styles'
-import { Modal } from '../ui/modal/Modal'
-import { usePopoverContext } from '../ui/popover/context'
+import { Application } from 'store/applications/types'
+import { DeleteApplication } from 'forms/DeleteApplication/DeleteApplication'
+import { MenuItem } from 'components/ApplicationMenu/styles'
+import { Modal } from 'ui/modal/Modal'
+import { usePopoverContext } from 'ui/popover/context'
 import { useState } from 'react'
 
 export const DeleteApplicationModal = ({ id }: Pick<Application, 'id'>) => {

@@ -1,10 +1,10 @@
 import { Container, Header, Title } from './styles'
 
-import { ApiLoader } from '../../ui/loader/ApiLoader'
+import { ApiLoader } from 'ui/loader/ApiLoader'
 import { TimeLineChart } from './TimeLineChart'
-import { applicationsGroupBy } from '../Status/utils'
+import { applicationsGroupBy } from 'components/Status/utils'
 import { populateTimeLine } from './utils'
-import { useGetApplicationsQuery } from '../../store/applications/applications'
+import { useGetApplicationsQuery } from 'store/applications/applications'
 
 export const TimeLine = () => {
 	const { data, isLoading } = useGetApplicationsQuery()

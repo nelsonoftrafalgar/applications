@@ -10,7 +10,7 @@ import {
 } from './optimisticUpdates'
 
 import { BadCompanyQueries } from './queries'
-import { api } from '../api'
+import { api } from 'store/api'
 
 export const badCompaniesApi = api.injectEndpoints({
 	endpoints: (builder) => ({

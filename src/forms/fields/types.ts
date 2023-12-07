@@ -1,6 +1,6 @@
 import { Control, FieldValues, Path } from 'react-hook-form'
 
-import { SelectOption } from '../../ui/select/types'
+import { SelectOption } from 'ui/select/types'
 
 export interface FormInputProps<T extends FieldValues> {
 	name: Path<T>

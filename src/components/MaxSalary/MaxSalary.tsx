@@ -1,9 +1,9 @@
 import { Container, Header, Title } from './styles'
 
-import { ApiLoader } from '../../ui/loader/ApiLoader'
+import { ApiLoader } from 'ui/loader/ApiLoader'
 import { MaxSalaryChart } from './MaxSalaryChart'
-import { applicationsGroupBy } from '../Status/utils'
-import { useGetApplicationsQuery } from '../../store/applications/applications'
+import { applicationsGroupBy } from 'components/Status/utils'
+import { useGetApplicationsQuery } from 'store/applications/applications'
 
 export const MaxSalary = () => {
 	const { data, isLoading } = useGetApplicationsQuery()

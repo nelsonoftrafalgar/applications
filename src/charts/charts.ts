@@ -1,6 +1,6 @@
-import { StatusChartDataItem } from '../components/Status/types'
-import { getDataColors } from '../components/Status/utils'
-import { theme } from '../styles/theme'
+import { StatusChartDataItem } from 'components/Status/types'
+import { getDataColors } from 'components/Status/utils'
+import { theme } from 'styles/theme'
 
 export const getStatusChartOptions = (data: StatusChartDataItem[]) => ({
 	tooltip: {

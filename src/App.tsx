@@ -1,9 +1,9 @@
-import { Applications } from './components/Applications/Applications'
-import { BadCompanies } from './components/BadCompanies/BadCompanies'
-import { MaxSalary } from './components/MaxSalary/MaxSalary'
-import { MinSalary } from './components/MinSalary/MinSalary'
-import { Status } from './components/Status/Status'
-import { TimeLine } from './components/Timeline/TimeLine'
+import { Applications } from 'components/Applications/Applications'
+import { BadCompanies } from 'components/BadCompanies/BadCompanies'
+import { MaxSalary } from 'components/MaxSalary/MaxSalary'
+import { MinSalary } from 'components/MinSalary/MinSalary'
+import { Status } from 'components/Status/Status'
+import { TimeLine } from 'components/Timeline/TimeLine'
 import styled from 'styled-components'
 
 const MasterWrapper = styled.div`

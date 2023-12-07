@@ -5,6 +5,6 @@ export interface Props {
 	content: ReactNode
 }
 
-export interface PopoverContext {
+export interface IPopoverContext {
 	setPopoverOpen: Dispatch<SetStateAction<boolean>>
 }

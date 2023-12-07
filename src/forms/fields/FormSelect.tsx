@@ -1,7 +1,7 @@
 import { FieldValues, useController } from 'react-hook-form'
 
 import { FormSelectProps } from './types'
-import { Select } from '../../ui/select/Select'
+import { Select } from 'ui/select/Select'
 
 export function FormSelect<T extends FieldValues>({
 	name,

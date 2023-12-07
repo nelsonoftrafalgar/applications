@@ -9,9 +9,9 @@ import {
 	Title
 } from './styles'
 
-import { ApiLoader } from '../../ui/loader/ApiLoader'
-import { CreateBadCompanyModal } from '../../modals/CreateBadCompanyModal'
-import { Input } from '../../ui/input/Input'
+import { ApiLoader } from 'ui/loader/ApiLoader'
+import { CreateBadCompanyModal } from 'modals/CreateBadCompanyModal'
+import { Input } from 'ui/input/Input'
 import { TableVirtuoso } from 'react-virtuoso'
 import { flexRender } from '@tanstack/react-table'
 import { forwardRef } from 'react'
