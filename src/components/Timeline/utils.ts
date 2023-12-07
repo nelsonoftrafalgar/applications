@@ -1,6 +1,7 @@
 export const generateDateArray = () => {
 	const startDate = new Date('2018-04-01')
 	const endDate = new Date()
+	endDate.setDate(endDate.getDate() + 1)
 
 	const dateArray = []
 

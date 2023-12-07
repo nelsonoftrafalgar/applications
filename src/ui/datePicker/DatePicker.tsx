@@ -27,6 +27,7 @@ const DatePickerComponent: FC<DatePickerProps> = ({
 					onChange={handleDateChange}
 					dateFormat={'dd-MM-yyyy'}
 					placeholderText='Date of application'
+					maxDate={new Date()}
 				/>
 			</DatePickerWrapper>
 			{errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
