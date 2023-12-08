@@ -2,21 +2,21 @@ import { CreateApplicationParams, EditApplicationParams } from './types'
 
 export const ApplicationQueries = {
 	getApplications: () => ({
-		url: 'applications?select=*&order=applied.desc',
+		url: 'rest/v1/applications?select=*&order=applied.desc',
 		method: 'GET'
 	}),
 	createApplication: (body: CreateApplicationParams) => ({
-		url: 'applications',
+		url: 'rest/v1/applications',
 		method: 'POST',
 		body
 	}),
 	editApplication: (body: EditApplicationParams) => ({
-		url: `applications?id=eq.${body.id}`,
+		url: `rest/v1/applications?id=eq.${body.id}`,
 		method: 'PATCH',
 		body
 	}),
 	deleteApplication: (id: string) => ({
-		url: `applications?id=eq.${id}`,
+		url: `rest/v1/applications?id=eq.${id}`,
 		method: 'DELETE'
 	})
 }

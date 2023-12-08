@@ -7,6 +7,7 @@ export interface FormInputProps<T extends FieldValues> {
 	placeholder: string
 	label?: string
 	control: Control<T>
+	type?: string
 }
 
 export interface FormDatePickerProps<T extends FieldValues> {

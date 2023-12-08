@@ -7,7 +7,8 @@ export function FormInput<T extends FieldValues>({
 	name,
 	placeholder,
 	label,
-	control
+	control,
+	type
 }: FormInputProps<T>) {
 	const {
 		field: { onChange, value },
@@ -23,6 +24,7 @@ export function FormInput<T extends FieldValues>({
 			value={value}
 			onChange={onChange}
 			errorMessage={error?.message}
+			type={type}
 		/>
 	)
 }
