@@ -23,7 +23,6 @@
     "@tanstack/react-table": "^8.10.7",
     "@types/react-datepicker": "^4.19.3",
     "echarts": "^5.4.3",
-    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-datepicker": "^4.23.0",
     "react-dom": "^18.2.0",

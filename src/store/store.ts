@@ -4,7 +4,7 @@ import { renderErrorMessage, renderSuccessMessage } from './messages'
 
 import type { Middleware } from '@reduxjs/toolkit'
 import { api } from './api'
-import authReducer from './auth/auth'
+import authReducer from './auth/authSlice'
 import { configureStore } from '@reduxjs/toolkit'
 
 export const apiLogger: Middleware = () => (next) => (action) => {
