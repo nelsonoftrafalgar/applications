@@ -2,7 +2,7 @@ import { Container, Header, Title } from './styles'
 
 import { ApiLoader } from 'ui/loader/ApiLoader'
 import { TimeLineChart } from './TimeLineChart'
-import { applicationsGroupBy } from 'components/Status/utils'
+import { applicationsGroupBy } from 'charts/utils'
 import { populateTimeLine } from './utils'
 import { useGetApplicationsQuery } from 'store/applications/applications'
 

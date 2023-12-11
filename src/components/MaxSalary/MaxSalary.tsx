@@ -1,14 +1,15 @@
 import { Container, Header, Title } from './styles'
+import { applicationsGroupBy, omitKey } from 'charts/utils'
 
 import { ApiLoader } from 'ui/loader/ApiLoader'
 import { MaxSalaryChart } from './MaxSalaryChart'
-import { applicationsGroupBy } from 'components/Status/utils'
 import { useGetApplicationsQuery } from 'store/applications/applications'
 
 export const MaxSalary = () => {
 	const { data, isLoading } = useGetApplicationsQuery()
 
 	const applicationsGroupedByMaxSalary = applicationsGroupBy(data, 'max_salary')
+	const chartData = omitKey(applicationsGroupedByMaxSalary, '0')
 
 	return (
 		<Container>
@@ -16,7 +17,7 @@ export const MaxSalary = () => {
 				<Header>
 					<Title>Max Salary</Title>
 				</Header>
-				<MaxSalaryChart data={applicationsGroupedByMaxSalary} />
+				<MaxSalaryChart data={chartData} />
 			</ApiLoader>
 		</Container>
 	)

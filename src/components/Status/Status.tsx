@@ -1,5 +1,5 @@
 import { Container, Header, Title } from './styles'
-import { applicationsGroupBy, convertToPieChartData } from './utils'
+import { applicationsGroupBy, convertToPieChartData } from '../../charts/utils'
 
 import { ApiLoader } from 'ui/loader/ApiLoader'
 import { StatusChart } from './StatusChart'

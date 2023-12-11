@@ -1,5 +1,5 @@
 import { StatusChartDataItem } from 'components/Status/types'
-import { getDataColors } from 'components/Status/utils'
+import { getDataColors } from 'charts/utils'
 import { theme } from 'styles/theme'
 
 export const getStatusChartOptions = (data: StatusChartDataItem[]) => ({

@@ -1,6 +1,6 @@
 import { Application, StatusType } from 'store/applications/types'
 
-import { StatusChartDataItem } from './types'
+import { StatusChartDataItem } from '../components/Status/types'
 import { theme } from 'styles/theme'
 
 export const applicationsGroupBy = (
@@ -33,10 +33,15 @@ const colorMap: Record<StatusType, string> = {
 	'not interested': orange,
 	'no answer': blue,
 	hire: violet,
-	'bad agreement': navy,
-	'failed interview': red,
+	'bad agreement': red,
+	'failed interview': navy,
 	'successful interview': green
 }
 
 export const getDataColors = (data: StatusChartDataItem[]) =>
 	data.map((status) => colorMap[status.name])
+
+export const omitKey = (obj: Record<string, number>, keyToRemove: string) => {
+	const { [keyToRemove]: _, ...newObject } = obj
+	return newObject
+}
