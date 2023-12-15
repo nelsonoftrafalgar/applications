@@ -8,3 +8,4 @@ Build with:
 - Radix-UI
 - Echarts
 - Supabase
+- Playwright
